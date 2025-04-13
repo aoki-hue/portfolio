@@ -1,14 +1,10 @@
+@use "./modules/variables" as var;
+
 // ネストのテスト
 div {
   p {
     font-weight: bold;
-    // text-align: center;
+    text-align: center;
+    color: var.$color-main;
   }
-}
-
-// 変数のテスト
-$fontColor: #525252;
-
-h1 {
-  color: $fontColor;
 }

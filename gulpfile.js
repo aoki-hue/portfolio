@@ -9,6 +9,12 @@ const watch = require("gulp-watch");
 const plumber = require("gulp-plumber");
 const browserSync = require("browser-sync").create();
 
+/* リロード */
+const browserSyncReload = (done) => {
+  browserSync.reload();
+  done();
+};
+
 gulp.task("sass", () => {
   return gulp
     .src("assets/sass/**/*.scss") //SCSSファイルを指定
@@ -25,7 +31,7 @@ gulp.task("sass", () => {
 
 //scssの監視＆変更があった場合にsassのタスク実行
 gulp.task("watch", () => {
-  gulp.watch("assets/sass/**/*.scss", gulp.task("sass"));
+  gulp.watch(["assets/sass/**/*.scss", "./**/*.html"], gulp.parallel(gulp.task("sass"), browserSyncReload));
 });
 
 //browserSyncの初期化
