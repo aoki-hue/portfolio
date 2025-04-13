@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.scss"],"names":[],"mappings":"AAEE,MACE,YAAA,IAQJ,GACE,MAHU","file":"style.min.css","sourcesContent":["// ネストのテスト\r\ndiv {\r\n  p {\r\n    font-weight: bold;\r\n    // text-align: center;\r\n  }\r\n}\r\n\r\n// 変数のテスト\r\n$fontColor: #525252;\r\n\r\nh1 {\r\n  color: $fontColor;\r\n}\r\n"]}
