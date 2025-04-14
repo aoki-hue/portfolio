@@ -1,0 +1,90 @@
+@use "./modules/layout" as layout;
+
+/* =============================================
+フォント関係の設定
+============================================= */
+// ベースフォント
+$font-base: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", verdana, Sans-Serif;
+
+// 明朝
+$font-serif: Georgia, YuMincho, "Yu Mincho", 游明朝体, "ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
+
+/* =============================================
+カラー関係の設定
+============================================= */
+// 背景カラー
+$color-bg-header: #2c2e36;
+$color-bg-corder: #ddaa88;
+$color-bg-designer: #e4d080;
+$color-bg-director: #9ab5c2;
+
+// サイトカラー
+$color-white: #ffffff;
+$color-font-accent: #983940;
+$color-primary: #8a7144;
+$color-secondary: #bbb6b0;
+$color-sub: #fdebb0;
+
+// フォントカラー
+$color-font: #2c2e36;
+
+// リンクカラー
+// $color-link: #ff8c28;
+// $color-link_visited: #39f;
+$color-link-hover: #fdebb0;
+$color-link_active: #00f;
+
+// ボーダーカラー
+$color-border: #d2d2d2;
+
+/* =============================================
+common
+============================================= */
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", verdana, Sans-Serif;
+
+  @include layout.respond-to(pc) {
+    font-size: 1.6rem;
+  }
+
+  @include layout.respond-to(sp) {
+    font-size: 1.4rem;
+  }
+}
+
+// 見出し
+.section {
+  &__label {
+    position: relative;
+    text-align: center;
+
+    @include layout.respond-to(pc) {
+      font-size: 3.2rem;
+      padding-bottom: 24px;
+    }
+
+    @include layout.respond-to(sp) {
+      font-size: 2.4rem;
+    }
+
+    &--decorative {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      font-weight: normal;
+      color: $color-primary;
+
+      @include layout.respond-to(pc) {
+        font-size: 1.4rem;
+      }
+
+      @include layout.respond-to(sp) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

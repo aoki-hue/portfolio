@@ -1,17 +1,74 @@
-// ================================
-// 幅関係の設定
-// ================================
-// 全体
-$width-base: 1200px;
+/* =============================================
+レスポンシブの設定
+============================================= */
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+$breakpoint-extra-large: 1200px;
 
-// 最大幅
-$width-max: 1200px;
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sp {
+    @media (max-width: #{$breakpoint-small}) {
+      @content;
+    }
+  } @else if $breakpoint == tb {
+    @media (max-width: #{$breakpoint-medium}) {
+      @content;
+    }
+  } @else if $breakpoint == pc {
+    @media (min-width: #{$breakpoint-medium}) {
+      @content;
+    }
+  } @else if $breakpoint == extra-large {
+    @media (max-width: #{$breakpoint-extra-large}) {
+      @content;
+    }
+  }
+}
 
-// 最小幅
-$width-min: 300px;
+/* =============================================
+box
+============================================= */
+.section {
+  @include respond-to(pc) {
+    margin-top: 72px;
+  }
+  @include respond-to(sp) {
+    margin-top: 56px;
+  }
+}
+.inner {
+  @include respond-to(pc) {
+    width: $breakpoint-large;
+    margin: 0 auto;
+    padding: 0 32px;
 
-// メインエリアの幅
-$width-main: 800px;
+    &::after {
+      content: "pc";
+      position: fixed;
+      top: 0;
+      left: 50%;
+    }
+  }
 
-// サイドバーの幅
-$width-side: 360px;
+  @include respond-to(tb) {
+    width: 100%;
+    padding: 0 24px;
+
+    &::after {
+      content: "tb";
+      position: fixed;
+      top: 0;
+      left: 50%;
+    }
+  }
+
+  @include respond-to(sp) {
+    &::after {
+      content: "sp";
+      position: fixed;
+      top: 0;
+      left: 50%;
+    }
+  }
+}

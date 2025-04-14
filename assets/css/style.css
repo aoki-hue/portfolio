@@ -1,5 +1,430 @@
-div p {
-  font-weight: bold;
+@charset "UTF-8";
+/* =============================================
+レスポンシブの設定
+============================================= */
+/* =============================================
+box
+============================================= */
+@media (min-width: 768px) {
+  .section {
+    margin-top: 72px;
+  }
+}
+@media (max-width: 576px) {
+  .section {
+    margin-top: 56px;
+  }
+}
+
+@media (min-width: 768px) {
+  .inner {
+    width: 1024px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .inner::after {
+    content: "pc";
+    position: fixed;
+    top: 0;
+    left: 50%;
+  }
+}
+@media (max-width: 768px) {
+  .inner {
+    width: 100%;
+    padding: 0 24px;
+  }
+  .inner::after {
+    content: "tb";
+    position: fixed;
+    top: 0;
+    left: 50%;
+  }
+}
+@media (max-width: 576px) {
+  .inner::after {
+    content: "sp";
+    position: fixed;
+    top: 0;
+    left: 50%;
+  }
+}
+
+/* =============================================
+フォント関係の設定
+============================================= */
+/* =============================================
+カラー関係の設定
+============================================= */
+/* =============================================
+common
+============================================= */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", verdana, Sans-Serif;
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 576px) {
+  body {
+    font-size: 1.4rem;
+  }
+}
+
+.section__label {
+  position: relative;
   text-align: center;
-  color: #0062b2;
+}
+@media (min-width: 768px) {
+  .section__label {
+    font-size: 3.2rem;
+    padding-bottom: 24px;
+  }
+}
+@media (max-width: 576px) {
+  .section__label {
+    font-size: 2.4rem;
+  }
+}
+.section__label--decorative {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  font-weight: normal;
+  color: #8a7144;
+}
+@media (min-width: 768px) {
+  .section__label--decorative {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 576px) {
+  .section__label--decorative {
+    font-size: 1.2rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where([hidden]:not([hidden=until-found])) {
+  display: none !important;
+}
+
+:where(html) {
+  -webkit-text-size-adjust: none;
+  color-scheme: dark light;
+  tab-size: 2;
+  scrollbar-gutter: stable;
+  interpolate-size: allow-keywords;
+  line-height: 1.5;
+}
+
+:where(html:has(dialog:modal[open])) {
+  overflow: clip;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :where(html:focus-within) {
+    scroll-behavior: smooth;
+  }
+}
+:where(body) {
+  line-height: inherit;
+  font-family: system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+:where(button) {
+  all: unset;
+}
+
+:where(input, button, textarea, select) {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+}
+
+:where(textarea) {
+  resize: vertical;
+  resize: block;
+}
+
+:where(button, label, select, summary, [role=button], [role=option]) {
+  cursor: pointer;
+}
+
+:where(:disabled, label:has(> :disabled, + disabled)) {
+  cursor: not-allowed;
+}
+
+:where(a) {
+  color: inherit;
+  text-underline-offset: 0.2ex;
+}
+
+:where(ul, ol) {
+  list-style: none;
+}
+
+:where(img, svg, video, canvas, audio, iframe, embed, object) {
+  display: block;
+}
+
+:where(img, picture, svg, video) {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+:where(p, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: break-word;
+}
+
+:where(h1, h2, h3) {
+  line-height: calc(1em + 0.5rem);
+  text-wrap: balance;
+}
+
+:where(hr) {
+  border: none;
+  border-block-start: 1px solid;
+  color: inherit;
+  block-size: 0;
+  overflow: visible;
+}
+
+:where(dialog, [popover]) {
+  border: none;
+  background: none;
+  color: inherit;
+  inset: unset;
+  max-width: unset;
+  max-height: unset;
+  overflow: unset;
+}
+
+:where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
+  display: none !important;
+}
+
+:where(:focus-visible) {
+  outline: 3px solid CanvasText;
+  box-shadow: 0 0 0 5px Canvas;
+  outline-offset: 1px;
+}
+
+:where(:focus-visible, :target) {
+  scroll-margin-block: 8vh;
+}
+
+:where(.visually-hidden:not(:focus-within, :active)) {
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  user-select: none !important;
+}
+
+/* =============================================
+header
+============================================= */
+.header {
+  background-color: #2c2e36;
+}
+@media (min-width: 768px) {
+  .header {
+    padding: 36px 0;
+  }
+}
+.header > .inner {
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .header > .inner {
+    align-items: baseline;
+    height: 58px;
+  }
+}
+@media (min-width: 768px) {
+  .header .header-logo {
+    width: 150px;
+    height: auto;
+  }
+}
+.header .nav__lists {
+  color: #ffffff;
+}
+@media (min-width: 768px) {
+  .header .nav__lists {
+    display: flex;
+  }
+}
+@media (min-width: 768px) {
+  .header .nav__lists--item + .nav__lists--item {
+    margin-left: 48px;
+  }
+}
+.header .nav__lists--item a {
+  text-decoration: none;
+}
+.header .nav__lists--item:hover {
+  color: #fdebb0;
+}
+
+/* =============================================
+main visual
+============================================= */
+.main-visual__inner--image {
+  width: 100%;
+}
+
+/* =============================================
+role
+============================================= */
+@media (min-width: 768px) {
+  .role-items {
+    display: flex;
+    margin-top: 48px;
+    gap: 0 24px;
+  }
+}
+@media (max-width: 576px) {
+  .role-items {
+    margin-top: 36px;
+  }
+}
+@media (min-width: 768px) {
+  .role-items__box {
+    width: calc((100% - 48px) / 3);
+  }
+}
+@media (max-width: 576px) {
+  .role-items__box {
+    width: 100%;
+  }
+}
+.role-items__box--label {
+  text-align: center;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .role-items__box--label {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 576px) {
+  .role-items__box--label {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 768px) {
+  .role-items__box--image {
+    width: 173px;
+    height: 173px;
+  }
+}
+@media (max-width: 576px) {
+  .role-items__box--image {
+    width: 173px;
+    height: 173px;
+  }
+}
+.role-items__box--image-wrap {
+  width: fit-content;
+  margin: 16px auto 0;
+  border-radius: 50%;
+}
+@media (min-width: 768px) {
+  .role-items__box--image-wrap {
+    padding: 32px;
+  }
+}
+@media (max-width: 576px) {
+  .role-items__box--image-wrap {
+    padding: 24px;
+  }
+}
+.role-items__box--image-wrap.role-corder {
+  background-color: #ddaa88;
+}
+.role-items__box--image-wrap.role-designer {
+  background-color: #e4d080;
+}
+.role-items__box--image-wrap.role-director {
+  background-color: #9ab5c2;
+}
+.role-items__box--text {
+  margin-top: 16px;
+}
+
+/* =============================================
+available skill
+============================================= */
+.skill-filter {
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .skill-filter {
+    margin-top: 48px;
+  }
+}
+@media (max-width: 576px) {
+  .skill-filter {
+    padding: 32px;
+  }
+}
+.skill-filter__status--item {
+  padding: 6px 20px 4px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .skill-filter__status--item + .skill-filter__status--item {
+    margin-left: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .skill-filter__status--item + .skill-filter__status--item {
+    margin-left: 16px;
+  }
+}
+.skill-filter__status--item.skillful {
+  background-color: #983940;
+  color: #ffffff;
+}
+.skill-filter__status--item.usual {
+  border: 1px solid #983940;
+  color: #983940;
+}
+.skill-filter__status--item.duration {
+  border: 1px solid #2c2e36;
+  color: #2c2e36;
+}
+.skill-filter__status--ico.fa-filter {
+  cursor: pointer;
+  font-size: 4rem;
+  color: #2c2e36;
+}
+.skill-filter__status--ico.fa-filter:hover {
+  color: #8a7144;
 }

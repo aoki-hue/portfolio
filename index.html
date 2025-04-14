@@ -6,8 +6,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
-    <div><p>テス</p></div>
+    <!-- header -->
+    <div class="header">
+      <div class="inner">
+        <h1><img src="/assets/image/header-logo.png" alt="ロゴ" class="header-logo" /></h1>
+        <nav class="nav">
+          <ul class="nav__lists">
+            <li class="nav__lists--item"><a href="#role">role</a></li>
+            <li class="nav__lists--item"><a href="#skill">available skill</a></li>
+            <li class="nav__lists--item"><a href="#working">working</a></li>
+            <li class="nav__lists--item"><a href="#contact">contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- main visual -->
+    <div class="main-visual">
+      <div class="inner">
+        <img src="/assets/image/main-visual.png" alt="メインビジュアル" class="main-visual__inner--image" />
+      </div>
+    </div>
+
+    <!-- role -->
+    <section id="role" class="section">
+      <div class="inner">
+        <h2 class="section__label">Role<span class="section__label--decorative">-&nbsp;担当役割&nbsp;-</span></h2>
+        <div class="role-items">
+          <!-- role-item -->
+          <div class="role-items__box">
+            <p class="role-items__box--label">コーディング</p>
+            <div class="role-items__box--image-wrap role-corder">
+              <img src="/assets/image/role-corder.png" alt="コーダー" class="role-items__box--image" />
+            </div>
+            <p class="role-items__box--text">WEBサイトの画面開発を主にフロントエンド開発を担当し、可読性や運用・保守を意識した効率的なコードを書くことを得意としています</p>
+          </div>
+          <!-- role-item -->
+          <div class="role-items__box">
+            <p class="role-items__box--label">デザイン</p>
+            <div class="role-items__box--image-wrap role-designer">
+              <img src="/assets/image/role-designer.png" alt="デザイナー" class="role-items__box--image" />
+            </div>
+            <p class="role-items__box--text">新規ページのデザインやバナー・アイコン等の素材作成を担当しています</p>
+          </div>
+          <!-- role-item -->
+          <div class="role-items__box">
+            <p class="role-items__box--label">ディレクション</p>
+            <div class="role-items__box--image-wrap role-director">
+              <img src="/assets/image/role-director.png" alt="ディレクター" class="role-items__box--image" />
+            </div>
+            <p class="role-items__box--text">Webサイト制作のディレクションを担当し、進行管理や品質チェックまで一貫して対応可能です。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- available skill -->
+    <section id="skill" class="section">
+      <div class="inner">
+        <h2 class="section__label">Available skill<span class="section__label--decorative">-&nbsp;言語・ツール&nbsp;-</span></h2>
+        <div class="skill-filter">
+          <div class="skill-filter__status">
+            <span class="skill-filter__status--item skillful">得意</span>
+            <span class="skill-filter__status--item usual">普通</span>
+            <span class="skill-filter__status--item duration">経験年数： 3年～5年</span>
+          </div>
+          <i class="fa-solid fa-filter skill-filter__status--ico"></i>
+          <!-- <img src="/assets/image/ico-filter.svg" alt="フィルターアイコン" class="skill-filter__status--ico" /> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- working -->
+    <section id="working" class="section">
+      <div class="inner">
+        <h2 class="section__label">Working<span class="section__label--decorative">-&nbsp;担当役割&nbsp;-</span></h2>
+      </div>
+    </section>
+
+    <!-- contact -->
+    <section id="contact" class="section">
+      <div class="inner">
+        <h2 class="section__label">Contact<span class="section__label--decorative">-&nbsp;担当役割&nbsp;-</span></h2>
+      </div>
+    </section>
   </body>
 </html>

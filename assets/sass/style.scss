@@ -1,10 +1,204 @@
-@use "./modules/variables" as var;
+@use "./modules/common" as common;
+@use "./modules/layout" as layout;
+@use "./modules/reset";
 
-// ネストのテスト
-div {
-  p {
-    font-weight: bold;
-    text-align: center;
-    color: var.$color-main;
+/* =============================================
+header
+============================================= */
+.header {
+  background-color: common.$color-bg-header;
+  @include layout.respond-to(pc) {
+    padding: 36px 0;
+  }
+
+  > .inner {
+    display: flex;
+    justify-content: space-between;
+
+    @include layout.respond-to(pc) {
+      align-items: baseline;
+      height: 58px;
+    }
+  }
+
+  .header-logo {
+    @include layout.respond-to(pc) {
+      width: 150px;
+      height: auto;
+    }
+  }
+
+  .nav {
+    &__lists {
+      color: common.$color-white;
+      @include layout.respond-to(pc) {
+        display: flex;
+      }
+
+      &--item {
+        + .nav__lists--item {
+          @include layout.respond-to(pc) {
+            margin-left: 48px;
+          }
+        }
+
+        a {
+          text-decoration: none;
+        }
+
+        &:hover {
+          color: common.$color-link-hover;
+        }
+      }
+    }
   }
 }
+
+/* =============================================
+main visual
+============================================= */
+.main-visual__inner--image {
+  width: 100%;
+}
+
+/* =============================================
+role
+============================================= */
+.role-items {
+  @include layout.respond-to(pc) {
+    display: flex;
+    margin-top: 48px;
+    gap: 0 24px;
+  }
+
+  @include layout.respond-to(sp) {
+    margin-top: 36px;
+  }
+
+  &__box {
+    @include layout.respond-to(pc) {
+      width: calc((100% - 24px * 2) / 3);
+    }
+    @include layout.respond-to(sp) {
+      width: 100%;
+    }
+    &--label {
+      text-align: center;
+      font-weight: bold;
+
+      @include layout.respond-to(pc) {
+        font-size: 2rem;
+      }
+      @include layout.respond-to(sp) {
+        font-size: 1.6rem;
+      }
+    }
+
+    &--image {
+      @include layout.respond-to(pc) {
+        width: 173px;
+        height: 173px;
+      }
+      @include layout.respond-to(sp) {
+        width: 173px;
+        height: 173px;
+      }
+    }
+    &--image-wrap {
+      width: fit-content;
+      margin: 16px auto 0;
+      border-radius: 50%;
+
+      @include layout.respond-to(pc) {
+        padding: 32px;
+      }
+      @include layout.respond-to(sp) {
+        padding: 24px;
+      }
+
+      &.role-corder {
+        background-color: common.$color-bg-corder;
+      }
+      &.role-designer {
+        background-color: common.$color-bg-designer;
+      }
+      &.role-director {
+        background-color: common.$color-bg-director;
+      }
+    }
+    &--text {
+      margin-top: 16px;
+    }
+  }
+}
+
+/* =============================================
+available skill
+============================================= */
+.skill-filter {
+  display: flex;
+  justify-content: space-between;
+
+  @include layout.respond-to(pc) {
+    margin-top: 48px;
+  }
+  @include layout.respond-to(sp) {
+    padding: 32px;
+  }
+
+  &__status {
+    &--item {
+      padding: 6px 20px 4px;
+      border-radius: 6px;
+      font-weight: bold;
+
+      + .skill-filter__status--item {
+        @include layout.respond-to(pc) {
+          margin-left: 20px;
+        }
+        @include layout.respond-to(sp) {
+          margin-left: 16px;
+        }
+      }
+
+      &.skillful {
+        background-color: common.$color-font-accent;
+        color: common.$color-white;
+      }
+      &.usual {
+        border: 1px solid common.$color-font-accent;
+        color: common.$color-font-accent;
+      }
+      &.duration {
+        border: 1px solid common.$color-font;
+        color: common.$color-font;
+      }
+    }
+    &--ico {
+      &.fa-filter {
+        cursor: pointer;
+        font-size: 4rem;
+        color: common.$color-font;
+        &:hover {
+          color: common.$color-primary;
+        }
+      }
+    }
+  }
+}
+// ネストのテスト
+// div {
+//   p {
+//     font-weight: bold;
+//     text-align: center;
+//     color: common.$color-main;
+
+//     @include layout.respond-to(pc) {
+//       font-size: 2rem;
+//     }
+
+//     @include layout.respond-to(sp) {
+//       font-size: 1.4rem;
+//     }
+//   }
+// }
