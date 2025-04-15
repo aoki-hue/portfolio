@@ -135,6 +135,25 @@ role
 /* =============================================
 available skill
 ============================================= */
+@mixin skill-status {
+  padding: 6px 24px 4px;
+  border-radius: 6px;
+  font-weight: bold;
+
+  &.skillful {
+    background-color: common.$color-font-accent;
+    color: common.$color-white;
+  }
+  &.usual {
+    border: 1px solid common.$color-font-accent;
+    color: common.$color-font-accent;
+  }
+  &.duration {
+    border: 1px solid common.$color-font;
+    color: common.$color-font;
+  }
+}
+
 .skill-filter {
   display: flex;
   justify-content: space-between;
@@ -148,9 +167,8 @@ available skill
 
   &__status {
     &--item {
-      padding: 6px 20px 4px;
-      border-radius: 6px;
-      font-weight: bold;
+      @include skill-status;
+      font-size: 2rem;
 
       + .skill-filter__status--item {
         @include layout.respond-to(pc) {
@@ -159,19 +177,6 @@ available skill
         @include layout.respond-to(sp) {
           margin-left: 16px;
         }
-      }
-
-      &.skillful {
-        background-color: common.$color-font-accent;
-        color: common.$color-white;
-      }
-      &.usual {
-        border: 1px solid common.$color-font-accent;
-        color: common.$color-font-accent;
-      }
-      &.duration {
-        border: 1px solid common.$color-font;
-        color: common.$color-font;
       }
     }
     &--ico {
@@ -186,19 +191,223 @@ available skill
     }
   }
 }
-// ネストのテスト
-// div {
-//   p {
-//     font-weight: bold;
-//     text-align: center;
-//     color: common.$color-main;
 
-//     @include layout.respond-to(pc) {
-//       font-size: 2rem;
-//     }
+.skills-wrap {
+  display: flex;
+  flex-wrap: wrap;
 
-//     @include layout.respond-to(sp) {
-//       font-size: 1.4rem;
-//     }
-//   }
-// }
+  @include layout.respond-to(pc) {
+    margin-top: 32px;
+    gap: 24px;
+  }
+  @include layout.respond-to(sp) {
+    margin-top: 24px;
+    gap: 16px;
+  }
+}
+
+.skill {
+  &__list {
+    @include layout.respond-to(pc) {
+      width: calc((100% - 24px * 3) / 4);
+    }
+    @include layout.respond-to(sp) {
+      width: calc((100% - 16px) / 2);
+    }
+    &--name {
+      font-weight: bold;
+    }
+
+    &--image {
+      @include layout.respond-to(pc) {
+        width: 176px;
+        height: 176px;
+      }
+      @include layout.respond-to(sp) {
+        width: 100%;
+      }
+    }
+
+    &--name {
+      @include layout.respond-to(pc) {
+        margin: 24px 0 16px;
+      }
+      @include layout.respond-to(sp) {
+        margin: 16px 0;
+      }
+    }
+    &--status {
+      @include skill-status;
+      margin-top: 16px;
+    }
+    &--duration {
+      font-weight: bold;
+      margin-top: 8px;
+    }
+  }
+}
+
+/* =============================================
+working
+============================================= */
+.working-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include layout.respond-to(pc) {
+    margin-top: 36px;
+    gap: 32px;
+  }
+  @include layout.respond-to(sp) {
+    gap: 16px;
+  }
+
+  &__item {
+    cursor: pointer;
+
+    @include layout.respond-to(pc) {
+      width: calc((100% - 32px * 2) / 3);
+    }
+    @include layout.respond-to(sp) {
+      width: calc((100% - 16px) / 2);
+    }
+
+    &--image {
+      width: 100%;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+/* =============================================
+contact
+============================================= */
+.contact {
+  &.section {
+    background-color: common.$color-bg-contact;
+    .inner {
+      @include layout.respond-to(pc) {
+        padding-top: 56px;
+      }
+      @include layout.respond-to(sp) {
+        padding-top: 36px;
+      }
+    }
+  }
+
+  .contact-tab {
+    width: fit-content;
+    margin: 36px auto;
+    letter-spacing: -1em;
+    &__list {
+      display: inline-block;
+      padding: 14px 40px 12px;
+      border: 1px solid common.$color-primary;
+      background-color: common.$color-white;
+      color: common.$color-primary;
+      font-weight: bold;
+      letter-spacing: 0.5rem;
+
+      &.selected {
+        color: common.$color-white;
+        background-color: common.$color-primary;
+      }
+
+      + .contact-tab__list {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .contact-form {
+    @include layout.respond-to(pc) {
+      width: 760px;
+      margin: 0 auto;
+    }
+    @include layout.respond-to(sp) {
+      width: 100%;
+    }
+
+    &__item {
+      @include layout.respond-to(pc) {
+        display: flex;
+        justify-content: space-between;
+        gap: 0 32px;
+        padding-bottom: 32px;
+      }
+      @include layout.respond-to(sp) {
+        padding-bottom: 24px;
+      }
+
+      &--label {
+        font-weight: bold;
+        @include layout.respond-to(pc) {
+          width: calc(100% - 480px - 32px);
+        }
+        @include layout.respond-to(sp) {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      &--require {
+        font-size: 1.4rem;
+        color: common.$color-white;
+        padding: 4px 16px;
+        background-color: common.$color-font-accent;
+        float: right;
+      }
+
+      &--input {
+        clear: both;
+        padding: 4px;
+        @include layout.respond-to(pc) {
+          width: 480px;
+        }
+        @include layout.respond-to(sp) {
+          width: 100%;
+        }
+      }
+
+      &--textarea {
+        clear: both;
+        padding: 4px;
+        @include layout.respond-to(pc) {
+          width: 480px;
+          height: 148px;
+        }
+        @include layout.respond-to(sp) {
+          width: 100%;
+          height: 148px;
+        }
+      }
+
+      &--text {
+        width: 100%;
+        display: none;
+      }
+    }
+
+    &__button {
+      font-weight: bold;
+      color: common.$color-white;
+      border-radius: 3px;
+      background-color: common.$color-primary;
+      cursor: pointer;
+
+      @include layout.respond-to(pc) {
+        width: fit-content;
+        margin: 48px auto 0;
+        padding: 14px 40px 12px;
+      }
+      &:hover {
+        color: common.$color-primary;
+        background-color: common.$color-white;
+        border: 2px solid common.$color-primary;
+      }
+    }
+  }
+}
