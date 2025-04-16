@@ -18,22 +18,21 @@ $color-bg-corder: #ddaa88;
 $color-bg-designer: #e4d080;
 $color-bg-director: #9ab5c2;
 $color-bg-contact: #fdebb0;
+$color-bg: #f3f5f4;
 
 // サイトカラー
 $color-white: #ffffff;
 $color-font-accent: #983940;
 $color-primary: #8a7144;
 $color-secondary: #fdebb0;
-// $color-sub: #fdebb0;
+$color-sub: #ddaf61;
 
 // フォントカラー
 $color-font: #2c2e36;
 
 // リンクカラー
-// $color-link: #ff8c28;
-// $color-link_visited: #39f;
 $color-link-hover: #fdebb0;
-$color-link_active: #00f;
+// $color-link_active: #00f;
 
 // ボーダーカラー
 $color-border: #d2d2d2;
@@ -45,7 +44,9 @@ html {
   font-size: 62.5%;
 }
 body {
+  color: $color-font;
   font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", verdana, Sans-Serif;
+  background-color: $color-bg;
 
   @include layout.respond-to(pc) {
     font-size: 1.6rem;
@@ -69,6 +70,7 @@ body {
 
     @include layout.respond-to(sp) {
       font-size: 2.4rem;
+      padding-bottom: 20px;
     }
 
     &--decorative {

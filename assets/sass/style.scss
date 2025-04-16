@@ -7,8 +7,13 @@ header
 ============================================= */
 .header {
   background-color: common.$color-bg-header;
+
   @include layout.respond-to(pc) {
     padding: 36px 0;
+  }
+
+  @include layout.respond-to(sp) {
+    padding: 28px 0;
   }
 
   > .inner {
@@ -28,11 +33,117 @@ header
     }
   }
 
+  @include layout.respond-to(pc) {
+    .menu-btn-check,
+    .menu-btn {
+      display: none;
+    }
+  }
+
+  // ハンバーガーメニュー
+  @include layout.respond-to(sp) {
+    .menu-btn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      height: 60px;
+      width: 60px;
+      justify-content: center;
+      align-items: center;
+      z-index: 90;
+      background-color: common.$color-bg-header;
+
+      span,
+      span::before,
+      span::after {
+        position: absolute;
+        content: "";
+        display: block;
+        height: 3px;
+        width: 25px;
+        border-radius: 3px;
+        background-color: common.$color-white;
+      }
+      span {
+        &::before {
+          bottom: 8px;
+        }
+        &::after {
+          top: 8px;
+        }
+      }
+    }
+
+    .menu-btn-check {
+      display: none;
+      &:checked {
+        & ~ .menu-btn {
+          background-color: rgba(255, 255, 255, 0);
+          span {
+            // 真ん中の線だけを透明にする
+            background-color: rgba(255, 255, 255, 0);
+
+            &::before {
+              bottom: 0;
+              transform: rotate(45deg);
+            }
+
+            &::after {
+              top: 0;
+              transform: rotate(-45deg);
+            }
+          }
+        }
+        & ~ .nav {
+          left: 0;
+        }
+      }
+    }
+  }
+
   .nav {
+    @include layout.respond-to(sp) {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 100%;
+      z-index: 80;
+      background-color: rgba(0, 0, 0, 0.75);
+      transition: all 0.5s;
+    }
     &__lists {
       color: common.$color-white;
+
       @include layout.respond-to(pc) {
         display: flex;
+      }
+
+      @include layout.respond-to(sp) {
+        padding: 72px 24px 0;
+
+        &--item {
+          position: relative;
+          border-bottom: solid 1px common.$color-white;
+
+          &::before {
+            position: absolute;
+            content: "";
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%) rotate(135deg);
+            width: 10px;
+            height: 10px;
+            border-top: solid 2px common.$color-white;
+            border-right: solid 2px common.$color-white;
+          }
+        }
+
+        &--link {
+          padding: 16px 0;
+          display: block;
+        }
       }
 
       &--item {
@@ -57,8 +168,16 @@ header
 /* =============================================
 main visual
 ============================================= */
-.main-visual__inner--image {
-  width: 100%;
+.main-visual {
+  &__inner--image {
+    width: 100%;
+  }
+
+  @include layout.respond-to(sp) {
+    .inner {
+      padding: 0;
+    }
+  }
 }
 
 /* =============================================
@@ -157,15 +276,24 @@ available skill
 .skill-filter {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   @include layout.respond-to(pc) {
     margin-top: 48px;
   }
+
   @include layout.respond-to(sp) {
-    padding: 32px;
+    // padding: 32px;
   }
 
   &__status {
+    @include layout.respond-to(sp) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      width: calc(100% - 40px);
+    }
+
     &--item {
       @include skill-status;
       font-size: 2rem;
@@ -173,9 +301,6 @@ available skill
       + .skill-filter__status--item {
         @include layout.respond-to(pc) {
           margin-left: 20px;
-        }
-        @include layout.respond-to(sp) {
-          margin-left: 16px;
         }
       }
     }
@@ -195,13 +320,12 @@ available skill
 .skills-wrap {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 32px;
 
   @include layout.respond-to(pc) {
-    margin-top: 32px;
     gap: 24px;
   }
   @include layout.respond-to(sp) {
-    margin-top: 24px;
     gap: 16px;
   }
 }
@@ -229,6 +353,8 @@ available skill
     }
 
     &--name {
+      text-align: center;
+
       @include layout.respond-to(pc) {
         margin: 24px 0 16px;
       }
@@ -243,6 +369,10 @@ available skill
     &--duration {
       font-weight: bold;
       margin-top: 8px;
+
+      @include layout.respond-to(sp) {
+        margin-top: 16px;
+      }
     }
   }
 }
@@ -259,6 +389,7 @@ working
     gap: 32px;
   }
   @include layout.respond-to(sp) {
+    margin-top: 32px;
     gap: 16px;
   }
 
@@ -289,12 +420,8 @@ contact
   &.section {
     background-color: common.$color-bg-contact;
     .inner {
-      @include layout.respond-to(pc) {
-        padding-top: 56px;
-      }
-      @include layout.respond-to(sp) {
-        padding-top: 36px;
-      }
+      padding-top: 56px;
+      padding-bottom: 56px;
     }
   }
 
@@ -332,14 +459,21 @@ contact
     }
 
     &__item {
+      border-bottom: 1px solid common.$color-sub;
+
+      &.last-child {
+        border-bottom: none;
+      }
+
       @include layout.respond-to(pc) {
         display: flex;
         justify-content: space-between;
         gap: 0 32px;
-        padding-bottom: 32px;
+        padding: 32px 0;
       }
+
       @include layout.respond-to(sp) {
-        padding-bottom: 24px;
+        padding: 24px 0;
       }
 
       &--label {
@@ -350,20 +484,30 @@ contact
         @include layout.respond-to(sp) {
           display: block;
           width: 100%;
+          margin-bottom: 16px;
         }
       }
 
       &--require {
         font-size: 1.4rem;
         color: common.$color-white;
-        padding: 4px 16px;
         background-color: common.$color-font-accent;
-        float: right;
+
+        @include layout.respond-to(pc) {
+          padding: 4px 16px;
+          float: right;
+        }
+
+        @include layout.respond-to(sp) {
+          padding: 2px 12px;
+          margin-left: 40px;
+        }
       }
 
       &--input {
         clear: both;
-        padding: 4px;
+        padding: 8px 4px;
+
         @include layout.respond-to(pc) {
           width: 480px;
         }
@@ -392,10 +536,12 @@ contact
     }
 
     &__button {
+      display: block;
       font-weight: bold;
       color: common.$color-white;
       border-radius: 3px;
       background-color: common.$color-primary;
+      border: 2px solid common.$color-primary;
       cursor: pointer;
 
       @include layout.respond-to(pc) {
@@ -403,11 +549,38 @@ contact
         margin: 48px auto 0;
         padding: 14px 40px 12px;
       }
+
+      @include layout.respond-to(sp) {
+        width: 100%;
+        padding: 14px 0 12px;
+        text-align: center;
+      }
+
       &:hover {
         color: common.$color-primary;
         background-color: common.$color-white;
         border: 2px solid common.$color-primary;
       }
+    }
+  }
+}
+
+/* =============================================
+contact
+============================================= */
+.footer {
+  background-color: common.$color-bg-header;
+  padding: 32px 0;
+
+  .copyright {
+    color: common.$color-white;
+    text-align: center;
+
+    @include layout.respond-to(pc) {
+      font-size: 1.4rem;
+    }
+    @include layout.respond-to(sp) {
+      font-size: 1.2rem;
     }
   }
 }

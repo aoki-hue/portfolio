@@ -33,6 +33,7 @@ box
   @include respond-to(pc) {
     margin-top: 72px;
   }
+
   @include respond-to(sp) {
     margin-top: 56px;
   }
@@ -42,33 +43,10 @@ box
     width: $breakpoint-large;
     margin: 0 auto;
     padding: 0 32px;
-
-    &::after {
-      content: "pc";
-      position: fixed;
-      top: 0;
-      left: 50%;
-    }
   }
 
   @include respond-to(tb) {
     width: 100%;
     padding: 0 24px;
-
-    &::after {
-      content: "tb";
-      position: fixed;
-      top: 0;
-      left: 50%;
-    }
-  }
-
-  @include respond-to(sp) {
-    &::after {
-      content: "sp";
-      position: fixed;
-      top: 0;
-      left: 50%;
-    }
   }
 }
