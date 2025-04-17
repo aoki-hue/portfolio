@@ -39,31 +39,44 @@
     <section id="role" class="section">
       <div class="inner">
         <h2 class="section__label">Role<span class="section__label--decorative">-&nbsp;担当役割&nbsp;-</span></h2>
-        <div class="role-items">
-          <!-- role-item -->
-          <div class="role-items__box">
-            <p class="role-items__box--label">コーディング</p>
-            <div class="role-items__box--image-wrap role-corder">
-              <img src="/assets/image/role-corder.png" alt="コーダー" class="role-items__box--image" />
+        <div class="slide-area">
+          <div class="role-items-wrap">
+            <div id="slide" class="role-items">
+              <!-- role-item -->
+              <div class="role-items__box">
+                <p class="role-items__box--label">コーディング</p>
+                <div class="role-items__box--image-wrap role-corder">
+                  <img src="/assets/image/role-corder.png" alt="コーダー" class="role-items__box--image" />
+                </div>
+                <p class="role-items__box--text">WEBサイトの画面開発を主にフロントエンド開発を担当し、可読性や運用・保守を意識した効率的なコードを書くことを得意としています</p>
+              </div>
+              <!-- role-item -->
+              <div class="role-items__box">
+                <p class="role-items__box--label">デザイン</p>
+                <div class="role-items__box--image-wrap role-designer">
+                  <img src="/assets/image/role-designer.png" alt="デザイナー" class="role-items__box--image" />
+                </div>
+                <p class="role-items__box--text">新規ページのデザインやバナー・アイコン等の素材作成を担当しています</p>
+              </div>
+              <!-- role-item -->
+              <div class="role-items__box">
+                <p class="role-items__box--label">ディレクション</p>
+                <div class="role-items__box--image-wrap role-director">
+                  <img src="/assets/image/role-director.png" alt="ディレクター" class="role-items__box--image" />
+                </div>
+                <p class="role-items__box--text">Webサイト制作のディレクションを担当し、進行管理や品質チェックまで一貫して対応可能です。</p>
+              </div>
             </div>
-            <p class="role-items__box--text">WEBサイトの画面開発を主にフロントエンド開発を担当し、可読性や運用・保守を意識した効率的なコードを書くことを得意としています</p>
           </div>
-          <!-- role-item -->
-          <div class="role-items__box">
-            <p class="role-items__box--label">デザイン</p>
-            <div class="role-items__box--image-wrap role-designer">
-              <img src="/assets/image/role-designer.png" alt="デザイナー" class="role-items__box--image" />
-            </div>
-            <p class="role-items__box--text">新規ページのデザインやバナー・アイコン等の素材作成を担当しています</p>
-          </div>
-          <!-- role-item -->
-          <div class="role-items__box">
-            <p class="role-items__box--label">ディレクション</p>
-            <div class="role-items__box--image-wrap role-director">
-              <img src="/assets/image/role-director.png" alt="ディレクター" class="role-items__box--image" />
-            </div>
-            <p class="role-items__box--text">Webサイト制作のディレクションを担当し、進行管理や品質チェックまで一貫して対応可能です。</p>
-          </div>
+          <!-- 左右のボタン -->
+          <span id="prev" class="prev"></span>
+          <span id="next" class="next"></span>
+          <!-- インジケーター -->
+          <ul class="slide__indicator" id="indicator">
+            <li class="slide__indicator--list currentSlide" data-slide-current="1"></li>
+            <li class="slide__indicator--list" data-slide-current="2"></li>
+            <li class="slide__indicator--list" data-slide-current="3"></li>
+          </ul>
         </div>
       </div>
     </section>
@@ -216,5 +229,7 @@
     <footer class="footer">
       <div class="inner"><p class="copyright">©&nbsp;2025&nbsp;Nozomu&nbsp;Aoki</p></div>
     </footer>
+
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>

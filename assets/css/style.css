@@ -386,9 +386,20 @@ main visual
 /* =============================================
 role
 ============================================= */
+@media (max-width: 576px) {
+  .role-items-wrap {
+    position: relative;
+    width: 239px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+}
+
+.role-items {
+  display: flex;
+}
 @media (min-width: 768px) {
   .role-items {
-    display: flex;
     margin-top: 48px;
     gap: 0 24px;
   }
@@ -396,6 +407,10 @@ role
 @media (max-width: 576px) {
   .role-items {
     margin-top: 36px;
+    transition: all 0.3s;
+    width: 100%;
+    margin: 0 auto;
+    transition: all 0.3s;
   }
 }
 @media (min-width: 768px) {
@@ -405,7 +420,7 @@ role
 }
 @media (max-width: 576px) {
   .role-items__box {
-    width: 100%;
+    min-width: 239px;
   }
 }
 .role-items__box--label {
@@ -460,6 +475,57 @@ role
 }
 .role-items__box--text {
   margin-top: 16px;
+}
+
+.next {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  z-index: 10;
+  cursor: pointer;
+  border-top: solid 3px #ddaf61;
+  border-right: solid 3px #ddaf61;
+  right: 10px;
+  transform: rotate(45deg) translateY(-50%);
+}
+
+.prev {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  z-index: 10;
+  cursor: pointer;
+  border-top: solid 3px #ddaf61;
+  border-right: solid 3px #ddaf61;
+  left: 10px;
+  transform: rotate(-135deg) translateY(-50%);
+  margin-top: -8px;
+}
+
+.slide-area {
+  position: relative;
+}
+
+.slide__indicator {
+  width: 100%;
+  display: flex;
+  column-gap: 18px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+.slide__indicator--list {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  list-style: none;
+  background-color: #d2d2d2;
+  cursor: pointer;
+}
+.slide__indicator--list.currentSlide {
+  background-color: #ddaf61;
 }
 
 /* =============================================

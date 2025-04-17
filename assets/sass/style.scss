@@ -183,23 +183,39 @@ main visual
 /* =============================================
 role
 ============================================= */
+.role-items-wrap {
+  @include layout.respond-to(sp) {
+    position: relative;
+    width: 239px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+}
+
 .role-items {
+  display: flex;
   @include layout.respond-to(pc) {
-    display: flex;
     margin-top: 48px;
     gap: 0 24px;
   }
 
   @include layout.respond-to(sp) {
     margin-top: 36px;
+    transition: all 0.3s;
+    width: 100%;
+    // width: calc(100% - 88px);
+    margin: 0 auto;
+    // overflow: hidden;
+    transition: all 0.3s;
   }
 
   &__box {
     @include layout.respond-to(pc) {
       width: calc((100% - 24px * 2) / 3);
     }
+
     @include layout.respond-to(sp) {
-      width: 100%;
+      min-width: 239px;
     }
     &--label {
       text-align: center;
@@ -247,6 +263,59 @@ role
     }
     &--text {
       margin-top: 16px;
+    }
+  }
+}
+
+// スライド 部品
+@mixin slideBtn {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  z-index: 10;
+  cursor: pointer;
+  border-top: solid 3px common.$color-sub;
+  border-right: solid 3px common.$color-sub;
+}
+
+.next {
+  @include slideBtn;
+  right: 10px;
+  transform: rotate(45deg) translateY(-50%);
+}
+
+.prev {
+  @include slideBtn;
+  left: 10px;
+  transform: rotate(-135deg) translateY(-50%);
+  margin-top: -8px;
+}
+
+.slide-area {
+  position: relative;
+}
+
+.slide {
+  &__indicator {
+    width: 100%;
+    display: flex;
+    column-gap: 18px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+
+    &--list {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      list-style: none;
+      background-color: common.$color-border;
+      cursor: pointer;
+
+      &.currentSlide {
+        background-color: common.$color-sub;
+      }
     }
   }
 }
