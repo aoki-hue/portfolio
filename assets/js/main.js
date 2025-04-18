@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollTo();
   skillListCreate();
   filterSkillList();
+  // modalToggle();
   if (window.innerWidth < 768) {
     slideShow();
   }
@@ -134,7 +135,44 @@ const skillListCreate = () => {
 /**
  * スキル一覧絞り込み
  */
-const filterSkillList = () => {};
+const filterSkillList = () => {
+  const modalFilter = document.querySelector(".js-skill-filter-modal");
+  const modalBg = document.querySelector(".js-bg-modal");
+  const skillFilterContainer = document.querySelector(".js-skill-modal");
+
+  // モーダルを開く
+  modalFilter.addEventListener("click", () => {
+    modalBg.classList.remove("hidden");
+    skillFilterContainer.classList.remove("hidden");
+  });
+
+  // モーダルを閉じる
+  modalClose("js-skill-modal");
+};
+
+/**
+ * モーダルを閉じる処理
+ */
+const modalClose = (modalTarget) => {
+  const modalBg = document.querySelector(".js-bg-modal");
+  const modalClose = document.querySelectorAll(".js-modal-close");
+  const modalContent = document.querySelector(`.${modalTarget}`);
+
+  modalClose.forEach((closeBtn) => {
+    closeBtn.addEventListener("click", () => {
+      addClassHidden();
+    });
+  });
+
+  modalBg.addEventListener("click", () => {
+    addClassHidden();
+  });
+
+  const addClassHidden = () => {
+    modalBg.classList.add("hidden");
+    modalContent.classList.add("hidden");
+  };
+};
 
 /**
  * ページ内スクロール

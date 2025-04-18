@@ -10,10 +10,10 @@
   </head>
   <body>
     <!-- modal area -->
-    <div class="bg-modal js-bg-modal"></div>
+    <div class="bg-modal hidden js-bg-modal"></div>
 
     <!-- skill - modal -->
-    <div class="modal-container">
+    <div class="modal-container js-skill-modal hidden">
       <div class="skill-modal">
         <p class="skill-modal-title">絞り込み</p>
         <div class="skill-modal__proficiency">
@@ -42,8 +42,8 @@
             <option value="6年以上">6年以上</option>
           </select>
         </div>
-        <button type="button" class="skill-modal__filter--button">絞り込む</button>
-        <i class="fa-solid fa-xmark js-skill-modal-close"></i>
+        <button type="button" class="skill-modal__filter--button js-skill-filter--button">絞り込む</button>
+        <i class="fa-solid fa-xmark js-modal-close"></i>
       </div>
     </div>
 
@@ -130,7 +130,7 @@
             <span class="skill-filter__status--item studying">勉強中</span>
             <span class="skill-filter__status--item duration">経験年数： 3年～5年</span>
           </div>
-          <i class="fa-solid fa-filter skill-filter__status--ico"></i>
+          <i class="fa-solid fa-filter skill-filter__status--ico js-skill-filter-modal"></i>
         </div>
         <!-- skills -->
         <ul class="skills-wrap js-createSkillList"></ul>
