@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "HTML",
+    "image": {
+      "src": "ico_html.svg",
+      "alt": "HTML"
+    },
+    "status": "得意",
+    "duration": 7
+  },
+  {
+    "id": 2,
+    "name": "CSS",
+    "image": {
+      "src": "ico_css.svg",
+      "alt": "CSS"
+    },
+    "status": "得意",
+    "duration": 7
+  },
+  {
+    "id": 3,
+    "name": "javascript",
+    "image": {
+      "src": "ico_javascript.svg",
+      "alt": "javascript"
+    },
+    "status": "普通",
+    "duration": 4
+  },
+  {
+    "id": 4,
+    "name": "sass",
+    "image": {
+      "src": "ico_sass.svg",
+      "alt": "sass"
+    },
+    "status": "得意",
+    "duration": 5
+  },
+  {
+    "id": 5,
+    "name": "jQuery",
+    "image": {
+      "src": "ico_jQuery.svg",
+      "alt": "jQuery"
+    },
+    "status": "普通",
+    "duration": 5
+  },
+  {
+    "id": 6,
+    "name": "Vue.js",
+    "image": {
+      "src": "ico_vuejs.svg",
+      "alt": "Vue.js"
+    },
+    "status": "普通",
+    "duration": 3
+  },
+  {
+    "id": 7,
+    "name": "React",
+    "image": {
+      "src": "ico_React.svg",
+      "alt": "React"
+    },
+    "status": "勉強中",
+    "duration": "-"
+  },
+  {
+    "id": 8,
+    "name": "Github",
+    "image": {
+      "src": "ico_Github.svg",
+      "alt": "Github"
+    },
+    "status": "普通",
+    "duration": 7
+  },
+  {
+    "id": 9,
+    "name": "Sketch",
+    "image": {
+      "src": "ico_sketch.svg",
+      "alt": "Sketch"
+    },
+    "status": "普通",
+    "duration": 3
+  },
+  {
+    "id": 10,
+    "name": "Photoshop",
+    "image": {
+      "src": "ico_photoshop.svg",
+      "alt": "photoshop"
+    },
+    "status": "普通",
+    "duration": 1
+  }
+]

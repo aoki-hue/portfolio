@@ -203,9 +203,7 @@ role
     margin-top: 36px;
     transition: all 0.3s;
     width: 100%;
-    // width: calc(100% - 88px);
     margin: 0 auto;
-    // overflow: hidden;
     transition: all 0.3s;
   }
 
@@ -278,43 +276,51 @@ role
   border-top: solid 3px common.$color-sub;
   border-right: solid 3px common.$color-sub;
 }
-
-.next {
-  @include slideBtn;
-  right: 10px;
-  transform: rotate(45deg) translateY(-50%);
+@include layout.respond-to(pc) {
+  .prev,
+  .next,
+  .slide__indicator {
+    display: none;
+  }
 }
+@include layout.respond-to(sp) {
+  .next {
+    @include slideBtn;
+    right: 10px;
+    transform: rotate(45deg) translateY(-50%);
+  }
 
-.prev {
-  @include slideBtn;
-  left: 10px;
-  transform: rotate(-135deg) translateY(-50%);
-  margin-top: -8px;
-}
+  .prev {
+    @include slideBtn;
+    left: 10px;
+    transform: rotate(-135deg) translateY(-50%);
+    margin-top: -8px;
+  }
 
-.slide-area {
-  position: relative;
-}
+  .slide-area {
+    position: relative;
+  }
 
-.slide {
-  &__indicator {
-    width: 100%;
-    display: flex;
-    column-gap: 18px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 24px;
+  .slide {
+    &__indicator {
+      width: 100%;
+      display: flex;
+      column-gap: 18px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 24px;
 
-    &--list {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      list-style: none;
-      background-color: common.$color-border;
-      cursor: pointer;
+      &--list {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        list-style: none;
+        background-color: common.$color-border;
+        cursor: pointer;
 
-      &.currentSlide {
-        background-color: common.$color-sub;
+        &.currentSlide {
+          background-color: common.$color-sub;
+        }
       }
     }
   }
@@ -335,10 +341,13 @@ available skill
   &.usual {
     border: 1px solid common.$color-font-accent;
     color: common.$color-font-accent;
+    background-color: common.$color-white;
   }
-  &.duration {
+  &.duration,
+  &.studying {
     border: 1px solid common.$color-font;
     color: common.$color-font;
+    background-color: common.$color-white;
   }
 }
 
@@ -352,7 +361,7 @@ available skill
   }
 
   @include layout.respond-to(sp) {
-    // padding: 32px;
+    margin-top: 36px;
   }
 
   &__status {
@@ -415,6 +424,7 @@ available skill
       @include layout.respond-to(pc) {
         width: 176px;
         height: 176px;
+        margin: 0 auto;
       }
       @include layout.respond-to(sp) {
         width: 100%;

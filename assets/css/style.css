@@ -477,57 +477,62 @@ role
   margin-top: 16px;
 }
 
-.next {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 50%;
-  z-index: 10;
-  cursor: pointer;
-  border-top: solid 3px #ddaf61;
-  border-right: solid 3px #ddaf61;
-  right: 10px;
-  transform: rotate(45deg) translateY(-50%);
+@media (min-width: 768px) {
+  .prev,
+  .next,
+  .slide__indicator {
+    display: none;
+  }
 }
-
-.prev {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 50%;
-  z-index: 10;
-  cursor: pointer;
-  border-top: solid 3px #ddaf61;
-  border-right: solid 3px #ddaf61;
-  left: 10px;
-  transform: rotate(-135deg) translateY(-50%);
-  margin-top: -8px;
+@media (max-width: 576px) {
+  .next {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    z-index: 10;
+    cursor: pointer;
+    border-top: solid 3px #ddaf61;
+    border-right: solid 3px #ddaf61;
+    right: 10px;
+    transform: rotate(45deg) translateY(-50%);
+  }
+  .prev {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    z-index: 10;
+    cursor: pointer;
+    border-top: solid 3px #ddaf61;
+    border-right: solid 3px #ddaf61;
+    left: 10px;
+    transform: rotate(-135deg) translateY(-50%);
+    margin-top: -8px;
+  }
+  .slide-area {
+    position: relative;
+  }
+  .slide__indicator {
+    width: 100%;
+    display: flex;
+    column-gap: 18px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+  }
+  .slide__indicator--list {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    list-style: none;
+    background-color: #d2d2d2;
+    cursor: pointer;
+  }
+  .slide__indicator--list.currentSlide {
+    background-color: #ddaf61;
+  }
 }
-
-.slide-area {
-  position: relative;
-}
-
-.slide__indicator {
-  width: 100%;
-  display: flex;
-  column-gap: 18px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 24px;
-}
-.slide__indicator--list {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  list-style: none;
-  background-color: #d2d2d2;
-  cursor: pointer;
-}
-.slide__indicator--list.currentSlide {
-  background-color: #ddaf61;
-}
-
 /* =============================================
 available skill
 ============================================= */
@@ -539,6 +544,11 @@ available skill
 @media (min-width: 768px) {
   .skill-filter {
     margin-top: 48px;
+  }
+}
+@media (max-width: 576px) {
+  .skill-filter {
+    margin-top: 36px;
   }
 }
 @media (max-width: 576px) {
@@ -562,10 +572,12 @@ available skill
 .skill-filter__status--item.usual {
   border: 1px solid #983940;
   color: #983940;
+  background-color: #ffffff;
 }
-.skill-filter__status--item.duration {
+.skill-filter__status--item.duration, .skill-filter__status--item.studying {
   border: 1px solid #2c2e36;
   color: #2c2e36;
+  background-color: #ffffff;
 }
 @media (min-width: 768px) {
   .skill-filter__status--item + .skill-filter__status--item {
@@ -614,6 +626,7 @@ available skill
   .skill__list--image {
     width: 176px;
     height: 176px;
+    margin: 0 auto;
   }
 }
 @media (max-width: 576px) {
@@ -647,10 +660,12 @@ available skill
 .skill__list--status.usual {
   border: 1px solid #983940;
   color: #983940;
+  background-color: #ffffff;
 }
-.skill__list--status.duration {
+.skill__list--status.duration, .skill__list--status.studying {
   border: 1px solid #2c2e36;
   color: #2c2e36;
+  background-color: #ffffff;
 }
 .skill__list--duration {
   font-weight: bold;

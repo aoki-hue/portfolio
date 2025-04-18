@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   scrollTo();
+  skillListCreate();
   if (window.innerWidth < 768) {
     slideShow();
   }
@@ -80,6 +81,53 @@ const slideShow = () => {
   prev.addEventListener("click", () => {
     prevClick();
   });
+};
+
+/**
+ * スキル一覧描画
+ */
+const skillListCreate = () => {
+  const jsonFile = "/assets/json/available-skill.json";
+  const htmlInsert = document.querySelector(".js-createSkillList");
+
+  fetch(jsonFile)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${jsonFile}. HTTP Status: ${response.status}`);
+      }
+
+      return response.json();
+    })
+    .then((array) => {
+      let addHtml = "";
+      let statusClass;
+
+      // HTML生成
+      array.forEach((item) => {
+        addHtml += `<li class="skill__list">`;
+        addHtml += `<img src="/assets/image/skill/${item.image.src}" alt="${item.image.alt}" class="skill__list--image" />`;
+        addHtml += `<p class="skill__list--name">${item.name}</p>`;
+        switch (item.status) {
+          case "得意":
+            statusClass = "skillful";
+            break;
+          case "普通":
+            statusClass = "usual";
+            break;
+          case "勉強中":
+            statusClass = "studying";
+            break;
+        }
+        addHtml += `<span class="skill__list--status ${statusClass}">${item.status}</span>`;
+        addHtml += `<p class="skill__list--duration"><span>経験年数：&nbsp;</span>${item.duration}年</p>`;
+        addHtml += `</li>`;
+      });
+
+      htmlInsert.innerHTML = addHtml;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 };
 
 /**
