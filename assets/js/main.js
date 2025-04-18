@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   scrollTo();
   skillListCreate();
+  filterSkillList();
   if (window.innerWidth < 768) {
     slideShow();
   }
@@ -129,6 +130,11 @@ const skillListCreate = () => {
       console.error("Error:", error);
     });
 };
+
+/**
+ * スキル一覧絞り込み
+ */
+const filterSkillList = () => {};
 
 /**
  * ページ内スクロール

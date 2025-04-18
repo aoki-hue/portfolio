@@ -893,3 +893,168 @@ contact
     font-size: 1.2rem;
   }
 }
+
+/* =============================================
+modal
+============================================= */
+.bg-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: all 0.5s;
+}
+
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 99;
+}
+
+.skill-modal {
+  background-color: #f3f5f4;
+}
+@media (min-width: 768px) {
+  .skill-modal {
+    padding: 48px;
+  }
+}
+@media (max-width: 576px) {
+  .skill-modal {
+    width: 80vw;
+    padding: 24px 16px;
+  }
+}
+.skill-modal-title {
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .skill-modal-title {
+    font-size: 2rem;
+    margin-bottom: 36px;
+  }
+}
+@media (max-width: 576px) {
+  .skill-modal-title {
+    font-size: 1.6rem;
+    margin-bottom: 32px;
+  }
+}
+@media (min-width: 768px) {
+  .skill-modal__proficiency {
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 576px) {
+  .skill-modal__proficiency {
+    margin-bottom: 20px;
+  }
+}
+.skill-modal__proficiency input[type=checkbox] {
+  appearance: none;
+}
+.skill-modal__proficiency input[type=checkbox]:checked + .skill-modal__proficiency--checkbox {
+  border: 1px solid #8a7144;
+  background-color: #8a7144;
+  color: #ffffff;
+}
+.skill-modal__proficiency--title {
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+.skill-modal__proficiency--wrap {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .skill-modal__proficiency--wrap {
+    gap: 24px;
+  }
+}
+@media (max-width: 576px) {
+  .skill-modal__proficiency--wrap {
+    gap: 16px;
+  }
+}
+.skill-modal__proficiency--checkbox {
+  display: inline-block;
+  text-align: center;
+  width: 74px;
+  padding: 10px 0;
+  border: 1px solid #2c2e36;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+@media (min-width: 768px) {
+  .skill-modal__duration {
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 576px) {
+  .skill-modal__duration {
+    margin-bottom: 32px;
+  }
+}
+.skill-modal__duration--title {
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+.skill-modal__duration--select {
+  border: 1px solid #2c2e36;
+  border-radius: 3px;
+  padding: 8px 12px;
+}
+@media (min-width: 768px) {
+  .skill-modal__duration--select {
+    width: 360px;
+  }
+}
+@media (max-width: 576px) {
+  .skill-modal__duration--select {
+    width: 100%;
+  }
+}
+.skill-modal__filter--button {
+  display: block;
+  font-weight: bold;
+  color: #ffffff;
+  border-radius: 3px;
+  background-color: #8a7144;
+  border: 2px solid #8a7144;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .skill-modal__filter--button {
+    width: fit-content;
+    margin: 48px auto 0;
+    padding: 14px 40px 12px;
+  }
+}
+@media (max-width: 576px) {
+  .skill-modal__filter--button {
+    width: 100%;
+    padding: 14px 0 12px;
+    text-align: center;
+  }
+}
+.skill-modal__filter--button:hover {
+  color: #8a7144;
+  background-color: #ffffff;
+  border: 2px solid #8a7144;
+}
+@media (min-width: 768px) {
+  .skill-modal__filter--button {
+    margin: 0 0 0 auto;
+  }
+}
+.skill-modal .fa-solid {
+  position: absolute;
+  top: -28px;
+  right: 0;
+  font-size: 2rem;
+  color: #ffffff;
+}

@@ -9,6 +9,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
+    <!-- modal area -->
+    <div class="bg-modal js-bg-modal"></div>
+
+    <!-- skill - modal -->
+    <div class="modal-container">
+      <div class="skill-modal">
+        <p class="skill-modal-title">絞り込み</p>
+        <div class="skill-modal__proficiency">
+          <p class="skill-modal__proficiency--title">習熟度</p>
+          <div class="skill-modal__proficiency--wrap">
+            <div>
+              <input type="checkbox" id="proficiency-skillful" name="proficiency" value="得意" class="js-skill-modal-checkbox" />
+              <label for="proficiency-skillful" class="skill-modal__proficiency--checkbox">得意</label>
+            </div>
+            <div>
+              <input type="checkbox" id="proficiency-usual" name="proficiency" value="普通" class="js-skill-modal-checkbox" />
+              <label for="proficiency-usual" class="skill-modal__proficiency--checkbox">普通</label>
+            </div>
+            <div>
+              <input type="checkbox" id="proficiency-studying" name="proficiency" value="勉強中" class="js-skill-modal-checkbox" />
+              <label for="proficiency-studying" class="skill-modal__proficiency--checkbox">勉強中</label>
+            </div>
+          </div>
+        </div>
+        <div class="skill-modal__duration">
+          <p class="skill-modal__duration--title">経験期間</p>
+          <select name="duration" id="duration" class="skill-modal__duration--select">
+            <option value="-">-</option>
+            <option value="0年～2年">0年～2年</option>
+            <option value="3年～5年">3年～5年</option>
+            <option value="6年以上">6年以上</option>
+          </select>
+        </div>
+        <button type="button" class="skill-modal__filter--button">絞り込む</button>
+        <i class="fa-solid fa-xmark js-skill-modal-close"></i>
+      </div>
+    </div>
+
     <!-- header -->
     <header class="header">
       <div class="inner">
@@ -89,6 +127,7 @@
           <div class="skill-filter__status">
             <span class="skill-filter__status--item skillful">得意</span>
             <span class="skill-filter__status--item usual">普通</span>
+            <span class="skill-filter__status--item studying">勉強中</span>
             <span class="skill-filter__status--item duration">経験年数： 3年～5年</span>
           </div>
           <i class="fa-solid fa-filter skill-filter__status--ico"></i>

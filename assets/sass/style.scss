@@ -495,6 +495,34 @@ working
 /* =============================================
 contact
 ============================================= */
+@mixin button {
+  display: block;
+  font-weight: bold;
+  color: common.$color-white;
+  border-radius: 3px;
+  background-color: common.$color-primary;
+  border: 2px solid common.$color-primary;
+  cursor: pointer;
+
+  @include layout.respond-to(pc) {
+    width: fit-content;
+    margin: 48px auto 0;
+    padding: 14px 40px 12px;
+  }
+
+  @include layout.respond-to(sp) {
+    width: 100%;
+    padding: 14px 0 12px;
+    text-align: center;
+  }
+
+  &:hover {
+    color: common.$color-primary;
+    background-color: common.$color-white;
+    border: 2px solid common.$color-primary;
+  }
+}
+
 .contact {
   &.section {
     background-color: common.$color-bg-contact;
@@ -615,31 +643,7 @@ contact
     }
 
     &__button {
-      display: block;
-      font-weight: bold;
-      color: common.$color-white;
-      border-radius: 3px;
-      background-color: common.$color-primary;
-      border: 2px solid common.$color-primary;
-      cursor: pointer;
-
-      @include layout.respond-to(pc) {
-        width: fit-content;
-        margin: 48px auto 0;
-        padding: 14px 40px 12px;
-      }
-
-      @include layout.respond-to(sp) {
-        width: 100%;
-        padding: 14px 0 12px;
-        text-align: center;
-      }
-
-      &:hover {
-        color: common.$color-primary;
-        background-color: common.$color-white;
-        border: 2px solid common.$color-primary;
-      }
+      @include button;
     }
   }
 }
@@ -661,5 +665,142 @@ contact
     @include layout.respond-to(sp) {
       font-size: 1.2rem;
     }
+  }
+}
+
+/* =============================================
+modal
+============================================= */
+.bg-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: all 0.5s;
+}
+
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 99;
+}
+
+.skill-modal {
+  background-color: common.$color-bg;
+
+  @include layout.respond-to(pc) {
+    padding: 48px;
+  }
+  @include layout.respond-to(sp) {
+    width: 80vw;
+    padding: 24px 16px;
+  }
+
+  &-title {
+    font-weight: bold;
+    @include layout.respond-to(pc) {
+      font-size: 2rem;
+      margin-bottom: 36px;
+    }
+    @include layout.respond-to(sp) {
+      font-size: 1.6rem;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__proficiency {
+    @include layout.respond-to(pc) {
+      margin-bottom: 24px;
+    }
+    @include layout.respond-to(sp) {
+      margin-bottom: 20px;
+    }
+
+    input[type="checkbox"] {
+      appearance: none;
+
+      &:checked {
+        + .skill-modal__proficiency--checkbox {
+          border: 1px solid common.$color-primary;
+          background-color: common.$color-primary;
+          color: common.$color-white;
+        }
+      }
+    }
+
+    &--title {
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    &--wrap {
+      display: flex;
+
+      @include layout.respond-to(pc) {
+        gap: 24px;
+      }
+      @include layout.respond-to(sp) {
+        gap: 16px;
+      }
+    }
+
+    &--checkbox {
+      display: inline-block;
+      text-align: center;
+      width: 74px;
+      padding: 10px 0;
+      border: 1px solid common.$color-font;
+      border-radius: 6px;
+      background-color: common.$color-white;
+    }
+  }
+
+  &__duration {
+    @include layout.respond-to(pc) {
+      margin-bottom: 24px;
+    }
+    @include layout.respond-to(sp) {
+      margin-bottom: 32px;
+    }
+
+    &--title {
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    &--select {
+      border: 1px solid common.$color-font;
+      border-radius: 3px;
+      padding: 8px 12px;
+
+      @include layout.respond-to(pc) {
+        width: 360px;
+      }
+      @include layout.respond-to(sp) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__filter {
+    &--button {
+      @include button;
+      @include layout.respond-to(pc) {
+        margin: 0 0 0 auto;
+      }
+    }
+  }
+
+  .fa-solid {
+    position: absolute;
+    top: -28px;
+    right: 0;
+    font-size: 2rem;
+    color: common.$color-white;
   }
 }
