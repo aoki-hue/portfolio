@@ -10,39 +10,39 @@
   </head>
   <body>
     <!-- modal area -->
-    <div class="bg-modal hidden js-bg-modal"></div>
+    <div class="bg-modal hidden js-modal-background js-modal-close"></div>
 
     <!-- skill - modal -->
-    <div class="modal-container js-skill-modal hidden">
+    <div class="modal-container js-modal-skill hidden">
       <div class="skill-modal">
         <p class="skill-modal-title">絞り込み</p>
         <div class="skill-modal__proficiency">
           <p class="skill-modal__proficiency--title">習熟度</p>
           <div class="skill-modal__proficiency--wrap">
             <div>
-              <input type="checkbox" id="proficiency-skillful" name="proficiency" value="得意" class="js-skill-modal-checkbox" />
+              <input type="checkbox" id="proficiency-skillful" name="proficiency" value="得意" />
               <label for="proficiency-skillful" class="skill-modal__proficiency--checkbox">得意</label>
             </div>
             <div>
-              <input type="checkbox" id="proficiency-usual" name="proficiency" value="普通" class="js-skill-modal-checkbox" />
+              <input type="checkbox" id="proficiency-usual" name="proficiency" value="普通" />
               <label for="proficiency-usual" class="skill-modal__proficiency--checkbox">普通</label>
             </div>
             <div>
-              <input type="checkbox" id="proficiency-studying" name="proficiency" value="勉強中" class="js-skill-modal-checkbox" />
+              <input type="checkbox" id="proficiency-studying" name="proficiency" value="勉強中" />
               <label for="proficiency-studying" class="skill-modal__proficiency--checkbox">勉強中</label>
             </div>
           </div>
         </div>
         <div class="skill-modal__duration">
           <p class="skill-modal__duration--title">経験期間</p>
-          <select name="duration" id="duration" class="skill-modal__duration--select">
-            <option value="-">-</option>
+          <select name="duration" id="duration" class="skill-modal__duration--select js-skill-modal-select">
+            <option value="">-</option>
             <option value="0年～2年">0年～2年</option>
             <option value="3年～5年">3年～5年</option>
             <option value="6年以上">6年以上</option>
           </select>
         </div>
-        <button type="button" class="skill-modal__filter--button js-skill-filter--button">絞り込む</button>
+        <button type="button" class="skill-modal__filter--button js-skill-filter-button">絞り込む</button>
         <i class="fa-solid fa-xmark js-modal-close"></i>
       </div>
     </div>
@@ -124,11 +124,11 @@
       <div class="inner">
         <h2 class="section__label">Available skill<span class="section__label--decorative">-&nbsp;言語・ツール&nbsp;-</span></h2>
         <div class="skill-filter">
-          <div class="skill-filter__status">
-            <span class="skill-filter__status--item skillful">得意</span>
+          <div class="skill-filter__status js-skill-status">
+            <!-- <span class="skill-filter__status--item skillful">得意</span>
             <span class="skill-filter__status--item usual">普通</span>
             <span class="skill-filter__status--item studying">勉強中</span>
-            <span class="skill-filter__status--item duration">経験年数： 3年～5年</span>
+            <span class="skill-filter__status--item duration">経験年数： 3年～5年</span> -->
           </div>
           <i class="fa-solid fa-filter skill-filter__status--ico js-skill-filter-modal"></i>
         </div>

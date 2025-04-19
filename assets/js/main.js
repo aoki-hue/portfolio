@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   scrollTo();
-  skillListCreate();
+  skillListCreate(null);
   filterSkillList();
-  // modalToggle();
   if (window.innerWidth < 768) {
     slideShow();
   }
@@ -88,9 +87,10 @@ const slideShow = () => {
 /**
  * スキル一覧描画
  */
-const skillListCreate = () => {
+const skillListCreate = (filterItems) => {
   const jsonFile = "/assets/json/available-skill.json";
   const htmlInsert = document.querySelector(".js-createSkillList");
+  const skillStatus = document.querySelector(".js-skill-status");
 
   fetch(jsonFile)
     .then((response) => {
@@ -103,9 +103,66 @@ const skillListCreate = () => {
     .then((array) => {
       let addHtml = "";
       let statusClass;
+      let duplicatedArray = []; // 重複込みの配列
+      let skillArray = []; // HTML生成用の配列
+
+      // jsonファイルを絞り込み、HTML生成用のオブジェクトを生成
+      if (filterItems !== null) {
+        filterItems.forEach((item) => {
+          let resultArray;
+
+          resultArray = array.filter((value) => {
+            if (item.indexOf("年") < 0) {
+              return value.status === item;
+            } else {
+              switch (item) {
+                case "0年～2年":
+                  return value.duration >= 0 && value.duration <= 2;
+                case "3年～5年":
+                  return value.duration >= 3 && value.duration <= 5;
+                case "6年以上":
+                  return value.duration >= 6;
+              }
+            }
+          });
+
+          resultArray.forEach((item) => {
+            duplicatedArray.push(item);
+          });
+        });
+
+        // オブジェクト内の値の重複チェック
+        skillArray = duplicatedArray.filter((item, index, array) => {
+          return array.findIndex((nextItem) => item.id === nextItem.id) === index;
+        });
+
+        // 絞り込みのステータスを描画
+        let statusHtml = "";
+        filterItems.forEach((item) => {
+          switch (item) {
+            case "得意":
+              statusHtml += `<span class="skill-filter__status--item skillful">${item}</span>`;
+              break;
+            case "普通":
+              statusHtml += `<span class="skill-filter__status--item usual">${item}</span>`;
+              break;
+            case "勉強中":
+              statusHtml += `<span class="skill-filter__status--item studying">${item}</span>`;
+              break;
+            default:
+              if (item !== "") {
+                statusHtml += `<span class="skill-filter__status--item duration">経験年数： ${item}</span>`;
+              }
+              break;
+          }
+        });
+        skillStatus.innerHTML = statusHtml;
+      } else {
+        skillArray = array;
+      }
 
       // HTML生成
-      array.forEach((item) => {
+      skillArray.forEach((item) => {
         addHtml += `<li class="skill__list">`;
         addHtml += `<img src="/assets/image/skill/${item.image.src}" alt="${item.image.alt}" class="skill__list--image" />`;
         addHtml += `<p class="skill__list--name">${item.name}</p>`;
@@ -137,41 +194,49 @@ const skillListCreate = () => {
  */
 const filterSkillList = () => {
   const modalFilter = document.querySelector(".js-skill-filter-modal");
-  const modalBg = document.querySelector(".js-bg-modal");
-  const skillFilterContainer = document.querySelector(".js-skill-modal");
+  const filterBtn = document.querySelector(".js-skill-filter-button");
 
   // モーダルを開く
   modalFilter.addEventListener("click", () => {
-    modalBg.classList.remove("hidden");
-    skillFilterContainer.classList.remove("hidden");
+    modalBackground.classList.remove("hidden");
+    modalSkillContent.classList.remove("hidden");
   });
 
-  // モーダルを閉じる
-  modalClose("js-skill-modal");
+  // 選択した項目を格納する
+  filterBtn.addEventListener("click", () => {
+    const checkedItems = document.querySelectorAll("input[name=proficiency]:checked");
+    const selectedItem = document.getElementById("duration");
+    let filterItemsArray = [];
+
+    // checkboxでcheckedされた項目のvalue値を格納
+    checkedItems.forEach((item) => {
+      filterItemsArray.push(item.value);
+    });
+
+    // selectBoxのvalue値を格納
+    filterItemsArray.push(selectedItem.value);
+
+    modalCloseProcessing();
+    skillListCreate(filterItemsArray);
+  });
 };
 
 /**
  * モーダルを閉じる処理
  */
-const modalClose = (modalTarget) => {
-  const modalBg = document.querySelector(".js-bg-modal");
-  const modalClose = document.querySelectorAll(".js-modal-close");
-  const modalContent = document.querySelector(`.${modalTarget}`);
+const modalCloseBtn = document.querySelectorAll(".js-modal-close");
+const modalBackground = document.querySelector(".js-modal-background");
+const modalSkillContent = document.querySelector(".js-modal-skill");
 
-  modalClose.forEach((closeBtn) => {
-    closeBtn.addEventListener("click", () => {
-      addClassHidden();
-    });
+modalCloseBtn.forEach((closeBtn) => {
+  closeBtn.addEventListener("click", () => {
+    modalCloseProcessing();
   });
+});
 
-  modalBg.addEventListener("click", () => {
-    addClassHidden();
-  });
-
-  const addClassHidden = () => {
-    modalBg.classList.add("hidden");
-    modalContent.classList.add("hidden");
-  };
+const modalCloseProcessing = () => {
+  modalBackground.classList.add("hidden");
+  modalSkillContent.classList.add("hidden");
 };
 
 /**
