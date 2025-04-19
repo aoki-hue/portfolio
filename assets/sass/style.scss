@@ -799,8 +799,37 @@ modal
       }
     }
   }
+}
 
-  .fa-solid {
+.working-modal {
+  @include layout.respond-to(pc) {
+    width: 408px;
+  }
+  &__working {
+    @include layout.respond-to(sp) {
+      width: 80vw;
+    }
+    &--image {
+      margin-bottom: 16px;
+
+      @include layout.respond-to(pc) {
+        width: 100%;
+      }
+    }
+    &--link {
+      display: inline-block;
+      text-decoration: none;
+      margin-bottom: 8px;
+      color: common.$color-link;
+    }
+    &--text {
+      color: common.$color-white;
+    }
+  }
+}
+
+.fa-solid {
+  &.js-modal-close {
     position: absolute;
     top: -28px;
     right: 0;

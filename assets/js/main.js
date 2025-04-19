@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollTo();
   skillListCreate(null);
   filterSkillList();
+  clickWorking();
   if (window.innerWidth < 768) {
     slideShow();
   }
@@ -222,11 +223,38 @@ const filterSkillList = () => {
 };
 
 /**
+ * 実績項目を押下した際の処理
+ */
+const clickWorking = () => {
+  const workingItems = document.querySelectorAll(".js-working-item");
+  const workingItemCreate = document.querySelector(".js-modal-working-content");
+
+  workingItems.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      let workingHtml = "";
+      console.log(event.target);
+
+      // モーダルを開く
+      modalBackground.classList.remove("hidden");
+      modalWorkingContent.classList.remove("hidden");
+
+      // 実績のリンクを生成
+      workingHtml += `<img src="${event.target.src}" alt="${event.target.alt}" class="working-modal__working--image" />`;
+      workingHtml += `<a href="${event.target.dataset.link}" class="working-modal__working--link" target="_blank">${event.target.dataset.link}</a>`;
+      workingHtml += `<p class="working-modal__working--text">${event.target.dataset.description}</p>`;
+
+      workingItemCreate.innerHTML = workingHtml;
+    });
+  });
+};
+
+/**
  * モーダルを閉じる処理
  */
 const modalCloseBtn = document.querySelectorAll(".js-modal-close");
 const modalBackground = document.querySelector(".js-modal-background");
 const modalSkillContent = document.querySelector(".js-modal-skill");
+const modalWorkingContent = document.querySelector(".js-modal-working");
 
 modalCloseBtn.forEach((closeBtn) => {
   closeBtn.addEventListener("click", () => {
@@ -237,6 +265,7 @@ modalCloseBtn.forEach((closeBtn) => {
 const modalCloseProcessing = () => {
   modalBackground.classList.add("hidden");
   modalSkillContent.classList.add("hidden");
+  modalWorkingContent.classList.add("hidden");
 };
 
 /**

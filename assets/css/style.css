@@ -1055,7 +1055,36 @@ modal
     margin: 0 0 0 auto;
   }
 }
-.skill-modal .fa-solid {
+
+@media (min-width: 768px) {
+  .working-modal {
+    width: 408px;
+  }
+}
+@media (max-width: 576px) {
+  .working-modal__working {
+    width: 80vw;
+  }
+}
+.working-modal__working--image {
+  margin-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .working-modal__working--image {
+    width: 100%;
+  }
+}
+.working-modal__working--link {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 8px;
+  color: #00b5ef;
+}
+.working-modal__working--text {
+  color: #ffffff;
+}
+
+.fa-solid.js-modal-close {
   position: absolute;
   top: -28px;
   right: 0;
