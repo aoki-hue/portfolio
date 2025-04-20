@@ -760,6 +760,7 @@ contact
 }
 .contact .contact-form__item {
   border-bottom: 1px solid #ddaf61;
+  position: relative;
 }
 .contact .contact-form__item.last-child {
   border-bottom: none;
@@ -843,6 +844,23 @@ contact
   width: 100%;
   display: none;
 }
+.contact .contact-form__item--errorText {
+  position: absolute;
+  color: #ff0000;
+}
+@media (min-width: 768px) {
+  .contact .contact-form__item--errorText {
+    font-size: 1.4rem;
+    left: 280px;
+    bottom: 8px;
+  }
+}
+@media (max-width: 576px) {
+  .contact .contact-form__item--errorText {
+    font-size: 1.2rem;
+    bottom: 0;
+  }
+}
 .contact .contact-form__button {
   display: block;
   font-weight: bold;
@@ -870,6 +888,12 @@ contact
   color: #8a7144;
   background-color: #ffffff;
   border: 2px solid #8a7144;
+}
+.contact .contact-form__button:disabled {
+  cursor: default;
+  color: #758492;
+  background-color: #bfc5ca;
+  border: 2px solid #bfc5ca;
 }
 
 /* =============================================
@@ -1049,6 +1073,12 @@ modal
   color: #8a7144;
   background-color: #ffffff;
   border: 2px solid #8a7144;
+}
+.skill-modal__filter--button:disabled {
+  cursor: default;
+  color: #758492;
+  background-color: #bfc5ca;
+  border: 2px solid #bfc5ca;
 }
 @media (min-width: 768px) {
   .skill-modal__filter--button {

@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   skillListCreate(null);
   filterSkillList();
   clickWorking();
+  new Validator("contactForm", "confirmBtn", "submitBtn");
   if (window.innerWidth < 768) {
     slideShow();
   }
@@ -267,6 +268,101 @@ const modalCloseProcessing = () => {
   modalSkillContent.classList.add("hidden");
   modalWorkingContent.classList.add("hidden");
 };
+
+/**
+ * バリデーション
+ */
+class Validator {
+  constructor(formId, confirmBtnId, submitBtnId) {
+    this.form = document.getElementById(formId);
+    this.inputs = document.querySelectorAll(".js-validate-input");
+    this.confirmButton = document.getElementById(confirmBtnId);
+    this.submitButton = document.getElementById(submitBtnId);
+
+    this.init();
+  }
+
+  init() {
+    this.inputs.forEach((input) => {
+      input.addEventListener("input", () => {
+        // 各inputで値が入力された際
+        this.validate(input);
+        this.toggleSubmitButton();
+      });
+    });
+
+    this.toggleSubmitButton(); // 初期状態でのチェック
+  }
+
+  validate(input) {
+    const type = input.dataset.type;
+    const value = input.value.trim();
+    const errorElement = document.getElementById(`${input.id}Error`);
+
+    let errorMessage = "";
+
+    // 入力チェック
+    if (!value) {
+      errorMessage = "この項目は必須です。";
+    } else {
+      switch (type) {
+        case "email":
+          if (!this.validateEmail(value)) {
+            errorMessage = "有効なメールアドレスを入力してください。";
+          }
+          break;
+        case "tel":
+          if (!this.validateTel(value)) {
+            errorMessage = "有効な電話番号を入力してください。";
+          }
+          break;
+        case "textarea":
+          if (value.length < 10) {
+            errorMessage = "10文字以上入力してください。";
+          }
+          break;
+      }
+    }
+
+    errorElement.textContent = errorMessage;
+  }
+
+  validateEmail(email) {
+    const regex = /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
+    return regex.test(email);
+  }
+
+  validateTel(tel) {
+    const regex = /0[1-9]\d{0,3}[-(]\d{1,4}[-)]\d{4}$/;
+    return regex.test(tel);
+  }
+
+  toggleSubmitButton() {
+    const allValid = Array.from(this.inputs).every((input) => {
+      const type = input.dataset.type;
+      const value = input.value.trim();
+
+      if (!value) false;
+
+      switch (type) {
+        case "email":
+          return this.validateEmail(value);
+        case "tel":
+          return this.validateTel(value);
+        case "textarea":
+          if (value.length > 9) {
+            return true;
+          }
+        case "text":
+          if (value) {
+            return true;
+          }
+      }
+    });
+
+    this.confirmButton.disabled = !allValid;
+  }
+}
 
 /**
  * ページ内スクロール

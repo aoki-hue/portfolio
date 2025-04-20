@@ -521,6 +521,13 @@ contact
     background-color: common.$color-white;
     border: 2px solid common.$color-primary;
   }
+
+  &:disabled {
+    cursor: default;
+    color: common.$color-font-disable;
+    background-color: common.$color-disable;
+    border: 2px solid common.$color-disable;
+  }
 }
 
 .contact {
@@ -567,6 +574,7 @@ contact
 
     &__item {
       border-bottom: 1px solid common.$color-sub;
+      position: relative;
 
       &.last-child {
         border-bottom: none;
@@ -639,6 +647,21 @@ contact
       &--text {
         width: 100%;
         display: none;
+      }
+
+      &--errorText {
+        position: absolute;
+        color: common.$color-error;
+
+        @include layout.respond-to(pc) {
+          font-size: 1.4rem;
+          left: 280px;
+          bottom: 8px;
+        }
+        @include layout.respond-to(sp) {
+          font-size: 1.2rem;
+          bottom: 0;
+        }
       }
     }
 
