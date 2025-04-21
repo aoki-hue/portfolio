@@ -367,7 +367,9 @@ class Validator {
 
   toggleConfirmPage() {
     this.confirmButton.addEventListener("click", () => {
+      this.confirmButton.style.display = "none";
       this.backButton.style.display = "block";
+      this.submitButton.style.display = "block";
 
       this.inputs.forEach((input) => {
         input.style.display = "none";
@@ -379,7 +381,9 @@ class Validator {
     });
 
     this.backButton.addEventListener("click", () => {
+      this.confirmButton.style.display = "block";
       this.backButton.style.display = "none";
+      this.submitButton.style.display = "none";
 
       this.inputs.forEach((input) => {
         input.style.display = "block";

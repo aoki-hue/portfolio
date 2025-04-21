@@ -5,25 +5,25 @@
 /* =============================================
 box
 ============================================= */
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .section {
     margin-top: 72px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .section {
     margin-top: 56px;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .inner {
     width: 1024px;
     margin: 0 auto;
     padding: 0 32px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .inner {
     width: 100%;
     padding: 0 24px;
@@ -48,12 +48,12 @@ body {
   font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", verdana, Sans-Serif;
   background-color: #f3f5f4;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   body {
     font-size: 1.6rem;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   body {
     font-size: 1.4rem;
   }
@@ -63,13 +63,13 @@ body {
   position: relative;
   text-align: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .section__label {
     font-size: 3.2rem;
     padding-bottom: 24px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .section__label {
     font-size: 2.4rem;
     padding-bottom: 20px;
@@ -83,12 +83,12 @@ body {
   font-weight: normal;
   color: #8a7144;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .section__label--decorative {
     font-size: 1.4rem;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .section__label--decorative {
     font-size: 1.2rem;
   }
@@ -232,12 +232,12 @@ header
 .header {
   background-color: #2c2e36;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .header {
     padding: 36px 0;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .header {
     padding: 28px 0;
   }
@@ -246,25 +246,25 @@ header
   display: flex;
   justify-content: space-between;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .header > .inner {
     align-items: baseline;
     height: 58px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .header .header-logo {
     width: 150px;
     height: auto;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .header .menu-btn-check,
   .header .menu-btn {
     display: none;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .header .menu-btn {
     position: fixed;
     top: 10px;
@@ -315,7 +315,7 @@ header
     left: 0;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .header .nav {
     width: 100%;
     height: 100%;
@@ -330,12 +330,12 @@ header
 .header .nav__lists {
   color: #ffffff;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .header .nav__lists {
     display: flex;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .header .nav__lists {
     padding: 72px 24px 0;
   }
@@ -359,7 +359,7 @@ header
     display: block;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .header .nav__lists--item + .nav__lists--item {
     margin-left: 48px;
   }
@@ -377,7 +377,7 @@ main visual
 .main-visual__inner--image {
   width: 100%;
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .main-visual .inner {
     padding: 0;
   }
@@ -386,7 +386,7 @@ main visual
 /* =============================================
 role
 ============================================= */
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .role-items-wrap {
     position: relative;
     width: 239px;
@@ -398,13 +398,13 @@ role
 .role-items {
   display: flex;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .role-items {
     margin-top: 48px;
     gap: 0 24px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .role-items {
     margin-top: 36px;
     transition: all 0.3s;
@@ -413,12 +413,12 @@ role
     transition: all 0.3s;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .role-items__box {
     width: calc((100% - 48px) / 3);
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .role-items__box {
     min-width: 239px;
   }
@@ -427,23 +427,23 @@ role
   text-align: center;
   font-weight: bold;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .role-items__box--label {
     font-size: 2rem;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .role-items__box--label {
     font-size: 1.6rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .role-items__box--image {
     width: 173px;
     height: 173px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .role-items__box--image {
     width: 173px;
     height: 173px;
@@ -454,12 +454,12 @@ role
   margin: 16px auto 0;
   border-radius: 50%;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .role-items__box--image-wrap {
     padding: 32px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .role-items__box--image-wrap {
     padding: 24px;
   }
@@ -477,14 +477,14 @@ role
   margin-top: 16px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .prev,
   .next,
   .slide__indicator {
     display: none;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .next {
     position: absolute;
     width: 16px;
@@ -541,17 +541,17 @@ available skill
   justify-content: space-between;
   flex-wrap: wrap;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .skill-filter {
     margin-top: 48px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .skill-filter {
     margin-top: 36px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .skill-filter__status {
     display: flex;
     flex-wrap: wrap;
@@ -579,7 +579,7 @@ available skill
   color: #2c2e36;
   background-color: #ffffff;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .skill-filter__status--item + .skill-filter__status--item {
     margin-left: 20px;
   }
@@ -598,23 +598,23 @@ available skill
   flex-wrap: wrap;
   margin-top: 32px;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .skills-wrap {
     gap: 24px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .skills-wrap {
     gap: 16px;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .skill__list {
     width: calc((100% - 72px) / 4);
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .skill__list {
     width: calc((100% - 16px) / 2);
   }
@@ -622,14 +622,14 @@ available skill
 .skill__list--name {
   font-weight: bold;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .skill__list--image {
     width: 176px;
     height: 176px;
     margin: 0 auto;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .skill__list--image {
     width: 100%;
   }
@@ -637,12 +637,12 @@ available skill
 .skill__list--name {
   text-align: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .skill__list--name {
     margin: 24px 0 16px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .skill__list--name {
     margin: 16px 0;
   }
@@ -671,7 +671,7 @@ available skill
   font-weight: bold;
   margin-top: 8px;
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .skill__list--duration {
     margin-top: 16px;
   }
@@ -684,13 +684,13 @@ working
   display: flex;
   flex-wrap: wrap;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .working-list {
     margin-top: 36px;
     gap: 32px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .working-list {
     margin-top: 32px;
     gap: 16px;
@@ -699,12 +699,12 @@ working
 .working-list__item {
   cursor: pointer;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .working-list__item {
     width: calc((100% - 64px) / 3);
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .working-list__item {
     width: calc((100% - 16px) / 2);
   }
@@ -747,13 +747,13 @@ contact
 .contact .contact-tab__list + .contact-tab__list {
   margin-left: 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .contact .contact-form {
     width: 760px;
     margin: 0 auto;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .contact .contact-form {
     width: 100%;
   }
@@ -765,7 +765,7 @@ contact
 .contact .contact-form__item.last-child {
   border-bottom: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .contact .contact-form__item {
     display: flex;
     justify-content: space-between;
@@ -773,7 +773,7 @@ contact
     padding: 32px 0;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .contact .contact-form__item {
     padding: 24px 0;
   }
@@ -781,12 +781,12 @@ contact
 .contact .contact-form__item--label {
   font-weight: bold;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .contact .contact-form__item--label {
     width: calc(100% - 480px - 32px);
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .contact .contact-form__item--label {
     display: block;
     width: 100%;
@@ -798,13 +798,13 @@ contact
   color: #ffffff;
   background-color: #983940;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .contact .contact-form__item--require {
     padding: 4px 16px;
     float: right;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .contact .contact-form__item--require {
     padding: 2px 12px;
     margin-left: 40px;
@@ -814,12 +814,12 @@ contact
   clear: both;
   padding: 8px 4px;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .contact .contact-form__item--input {
     width: 480px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .contact .contact-form__item--input {
     width: 100%;
   }
@@ -828,13 +828,13 @@ contact
   clear: both;
   padding: 4px;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .contact .contact-form__item--textarea {
     width: 480px;
     height: 148px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .contact .contact-form__item--textarea {
     width: 100%;
     height: 148px;
@@ -843,12 +843,12 @@ contact
 .contact .contact-form__item--text {
   display: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .contact .contact-form__item--text {
     width: 480px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .contact .contact-form__item--text {
     width: 100%;
   }
@@ -857,14 +857,14 @@ contact
   position: absolute;
   color: #ff0000;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .contact .contact-form__item--errorText {
     font-size: 1.4rem;
     left: 280px;
     bottom: 8px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .contact .contact-form__item--errorText {
     font-size: 1.2rem;
     bottom: 0;
@@ -883,14 +883,14 @@ contact
   display: block;
   text-align: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .contact .contact-form__button {
     width: 228px;
     margin: 48px auto 0;
     padding: 14px 0 12px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .contact .contact-form__button {
     width: 100%;
     padding: 14px 0 12px;
@@ -907,6 +907,16 @@ contact
   color: #758492;
   background-color: #bfc5ca;
   border: 2px solid #bfc5ca;
+}
+@media (min-width: 767px) {
+  .contact .contact-form__button + .contact-form__button {
+    margin-top: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .contact .contact-form__button + .contact-form__button {
+    margin-top: 16px;
+  }
 }
 .contact .contact-form__button-back {
   background-color: #ffffff;
@@ -928,12 +938,12 @@ contact
   color: #ffffff;
   text-align: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .footer .copyright {
     font-size: 1.4rem;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .footer .copyright {
     font-size: 1.2rem;
   }
@@ -968,12 +978,12 @@ modal
 .skill-modal {
   background-color: #f3f5f4;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .skill-modal {
     padding: 48px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .skill-modal {
     width: 80vw;
     padding: 24px 16px;
@@ -982,24 +992,24 @@ modal
 .skill-modal-title {
   font-weight: bold;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .skill-modal-title {
     font-size: 2rem;
     margin-bottom: 36px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .skill-modal-title {
     font-size: 1.6rem;
     margin-bottom: 32px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .skill-modal__proficiency {
     margin-bottom: 24px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .skill-modal__proficiency {
     margin-bottom: 20px;
   }
@@ -1019,12 +1029,12 @@ modal
 .skill-modal__proficiency--wrap {
   display: flex;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .skill-modal__proficiency--wrap {
     gap: 24px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .skill-modal__proficiency--wrap {
     gap: 16px;
   }
@@ -1038,12 +1048,12 @@ modal
   border-radius: 6px;
   background-color: #ffffff;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .skill-modal__duration {
     margin-bottom: 24px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .skill-modal__duration {
     margin-bottom: 32px;
   }
@@ -1057,12 +1067,12 @@ modal
   border-radius: 3px;
   padding: 8px 12px;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .skill-modal__duration--select {
     width: 360px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .skill-modal__duration--select {
     width: 100%;
   }
@@ -1080,14 +1090,14 @@ modal
   display: block;
   text-align: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .skill-modal__filter--button {
     width: 228px;
     margin: 48px auto 0;
     padding: 14px 0 12px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .skill-modal__filter--button {
     width: 100%;
     padding: 14px 0 12px;
@@ -1105,18 +1115,18 @@ modal
   background-color: #bfc5ca;
   border: 2px solid #bfc5ca;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .skill-modal__filter--button {
     margin: 0 0 0 auto;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .working-modal {
     width: 408px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .working-modal__working {
     width: 80vw;
   }
@@ -1124,7 +1134,7 @@ modal
 .working-modal__working--image {
   margin-bottom: 16px;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .working-modal__working--image {
     width: 100%;
   }

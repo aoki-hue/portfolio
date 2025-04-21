@@ -12,6 +12,10 @@ header
     padding: 36px 0;
   }
 
+  // @include layout.respond-to(tb) {
+  //   padding: 28px 0;
+  // }
+
   @include layout.respond-to(sp) {
     padding: 28px 0;
   }
@@ -24,6 +28,11 @@ header
       align-items: baseline;
       height: 58px;
     }
+
+    // @include layout.respond-to(tb) {
+    //   align-items: baseline;
+    //   height: 58px;
+    // }
   }
 
   .header-logo {
@@ -39,6 +48,13 @@ header
       display: none;
     }
   }
+
+  // @include layout.respond-to(tb) {
+  //   .menu-btn-check,
+  //   .menu-btn {
+  //     display: none;
+  //   }
+  // }
 
   // ハンバーガーメニュー
   @include layout.respond-to(sp) {
@@ -119,6 +135,10 @@ header
       @include layout.respond-to(pc) {
         display: flex;
       }
+
+      // @include layout.respond-to(tb) {
+      //   display: flex;
+      // }
 
       @include layout.respond-to(sp) {
         padding: 72px 24px 0;
@@ -678,6 +698,15 @@ contact
 
     &__button {
       @include button;
+
+      + .contact-form__button {
+        @include layout.respond-to(pc) {
+          margin-top: 24px;
+        }
+        @include layout.respond-to(sp) {
+          margin-top: 16px;
+        }
+      }
     }
 
     &__button-back {

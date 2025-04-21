@@ -1,8 +1,8 @@
 /* =============================================
 レスポンシブの設定
 ============================================= */
-$breakpoint-small: 576px;
-$breakpoint-medium: 768px;
+$breakpoint-small: 767px;
+// $breakpoint-medium: 768px;
 $breakpoint-large: 1024px;
 $breakpoint-extra-large: 1200px;
 
@@ -11,12 +11,8 @@ $breakpoint-extra-large: 1200px;
     @media (max-width: #{$breakpoint-small}) {
       @content;
     }
-  } @else if $breakpoint == tb {
-    @media (max-width: #{$breakpoint-medium}) {
-      @content;
-    }
   } @else if $breakpoint == pc {
-    @media (min-width: #{$breakpoint-medium}) {
+    @media (min-width: #{$breakpoint-small}) {
       @content;
     }
   } @else if $breakpoint == extra-large {
@@ -45,7 +41,7 @@ box
     padding: 0 32px;
   }
 
-  @include respond-to(tb) {
+  @include respond-to(sp) {
     width: 100%;
     padding: 0 24px;
   }
