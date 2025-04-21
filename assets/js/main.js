@@ -276,6 +276,7 @@ class Validator {
   constructor(formId, confirmBtnId, submitBtnId) {
     this.form = document.getElementById(formId);
     this.inputs = document.querySelectorAll(".js-validate-input");
+    this.inputTexts = document.querySelectorAll(".js-input-text");
     this.confirmButton = document.getElementById(confirmBtnId);
     this.submitButton = document.getElementById(submitBtnId);
 
@@ -350,17 +351,14 @@ class Validator {
         case "tel":
           return this.validateTel(value);
         case "textarea":
-          if (value.length > 9) {
-            return true;
-          }
-        case "text":
-          if (value) {
-            return true;
-          }
+          return value.length >= 10;
+        default:
+          return value;
       }
     });
 
     this.confirmButton.disabled = !allValid;
+    this.submitButton.disabled = !allValid;
   }
 }
 
