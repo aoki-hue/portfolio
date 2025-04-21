@@ -504,10 +504,15 @@ contact
   border: 2px solid common.$color-primary;
   cursor: pointer;
 
+  span {
+    display: block;
+    text-align: center;
+  }
+
   @include layout.respond-to(pc) {
-    width: fit-content;
+    width: 228px;
     margin: 48px auto 0;
-    padding: 14px 40px 12px;
+    padding: 14px 0 12px;
   }
 
   @include layout.respond-to(sp) {
@@ -645,8 +650,14 @@ contact
       }
 
       &--text {
-        width: 100%;
         display: none;
+
+        @include layout.respond-to(pc) {
+          width: 480px;
+        }
+        @include layout.respond-to(sp) {
+          width: 100%;
+        }
       }
 
       &--errorText {
@@ -667,6 +678,16 @@ contact
 
     &__button {
       @include button;
+    }
+
+    &__button-back {
+      background-color: common.$color-white;
+      border: 2px solid common.$color-primary;
+      color: common.$color-primary;
+
+      &:hover {
+        opacity: 0.9;
+      }
     }
   }
 }

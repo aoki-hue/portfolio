@@ -279,6 +279,7 @@ class Validator {
     this.inputTexts = document.querySelectorAll(".js-input-text");
     this.confirmButton = document.getElementById(confirmBtnId);
     this.submitButton = document.getElementById(submitBtnId);
+    this.backButton = document.getElementById("backBtn");
 
     this.init();
   }
@@ -293,12 +294,14 @@ class Validator {
     });
 
     this.toggleSubmitButton(); // 初期状態でのチェック
+    this.toggleConfirmPage();
   }
 
   validate(input) {
     const type = input.dataset.type;
     const value = input.value.trim();
     const errorElement = document.getElementById(`${input.id}Error`);
+    const inputTextElement = document.getElementById(`${input.id}InputText`);
 
     let errorMessage = "";
 
@@ -326,6 +329,7 @@ class Validator {
     }
 
     errorElement.textContent = errorMessage;
+    inputTextElement.textContent = value;
   }
 
   validateEmail(email) {
@@ -359,6 +363,32 @@ class Validator {
 
     this.confirmButton.disabled = !allValid;
     this.submitButton.disabled = !allValid;
+  }
+
+  toggleConfirmPage() {
+    this.confirmButton.addEventListener("click", () => {
+      this.backButton.style.display = "block";
+
+      this.inputs.forEach((input) => {
+        input.style.display = "none";
+      });
+
+      this.inputTexts.forEach((text) => {
+        text.style.display = "block";
+      });
+    });
+
+    this.backButton.addEventListener("click", () => {
+      this.backButton.style.display = "none";
+
+      this.inputs.forEach((input) => {
+        input.style.display = "block";
+      });
+
+      this.inputTexts.forEach((text) => {
+        text.style.display = "none";
+      });
+    });
   }
 }
 

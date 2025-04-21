@@ -175,48 +175,49 @@
     <section id="contact" class="section contact">
       <div class="inner">
         <h2 class="section__label">Contact<span class="section__label--decorative">-&nbsp;お問い合わせ&nbsp;-</span></h2>
-        <ul class="contact-tab">
+        <!-- <ul class="contact-tab">
           <li class="contact-tab__list selected"><span class="contact-tab__list--item">企業</span></li>
           <li class="contact-tab__list"><span class="contact-tab__list--item">個人</span></li>
-        </ul>
+        </ul> -->
         <form id="contactForm" action="" method="post" class="contact-form">
           <div class="contact-form__item">
             <label for="company" class="contact-form__item--label">企業名<span class="contact-form__item--require">必須</span></label>
             <input type="text" data-type="text" name="company" id="company" class="contact-form__item--input js-validate-input" />
-            <p class="contact-form__item--text js-input-text">テキストテキストテキスト</p>
+            <p id="companyInputText" class="contact-form__item--text js-input-text"></p>
             <p id="companyError" class="contact-form__item--errorText"></p>
           </div>
           <div class="contact-form__item">
             <label for="department" class="contact-form__item--label">所属&nbsp;/&nbsp;部署名<span class="contact-form__item--require">必須</span></label>
             <input type="text" data-type="text" name="department" id="department" class="contact-form__item--input js-validate-input" />
-            <p class="contact-form__item--text js-input-text">テキストテキストテキスト</p>
+            <p id="departmentInputText" class="contact-form__item--text js-input-text"></p>
             <p id="departmentError" class="contact-form__item--errorText"></p>
           </div>
           <div class="contact-form__item">
             <label for="name" class="contact-form__item--label">ご担当者名<span class="contact-form__item--require">必須</span></label>
             <input type="text" data-type="text" name="personnel" id="name" class="contact-form__item--input js-validate-input" />
-            <p class="contact-form__item--text js-input-text">テキストテキストテキスト</p>
+            <p id="nameInputText" class="contact-form__item--text js-input-text"></p>
             <p id="nameError" class="contact-form__item--errorText"></p>
           </div>
           <div class="contact-form__item">
             <label for="tel" class="contact-form__item--label">お電話番号<span class="contact-form__item--require">必須</span></label>
             <input type="tel" data-type="tel" name="tel" id="tel" class="contact-form__item--input js-validate-input" />
-            <p class="contact-form__item--text js-input-text">テキストテキストテキスト</p>
+            <p id="telInputText" class="contact-form__item--text js-input-text"></p>
             <p id="telError" class="contact-form__item--errorText"></p>
           </div>
           <div class="contact-form__item">
             <label for="email" class="contact-form__item--label">メールアドレス<span class="contact-form__item--require">必須</span></label>
             <input type="email" data-type="email" name="email" id="email" class="contact-form__item--input js-validate-input" />
-            <p class="contact-form__item--text js-input-text">テキストテキストテキスト</p>
+            <p id="emailInputText" class="contact-form__item--text js-input-text"></p>
             <p id="emailError" class="contact-form__item--errorText"></p>
           </div>
           <div class="contact-form__item last-child">
             <label for="purpose" class="contact-form__item--label">ご用件<span class="contact-form__item--require">必須</span></label>
             <textarea name="name" id="purpose" data-type="textarea" class="contact-form__item--textarea js-validate-input"></textarea>
-            <p class="contact-form__item--text js-input-text">テキストテキストテキスト</p>
+            <p id="purposeInputText" class="contact-form__item--text js-input-text"></p>
             <p id="purposeError" class="contact-form__item--errorText"></p>
           </div>
           <button id="confirmBtn" type="button" class="contact-form__button"><span class="contact-form__button--text">送信内容を確認する</span></button>
+          <button id="backBtn" type="button" class="contact-form__button contact-form__button-back" style="display: none"><span class="contact-form__button--text">入力を修正する</span></button>
           <button id="submitBtn" type="submit" class="contact-form__button" style="display: none"><span class="contact-form__button--text">送信する</span></button>
         </form>
       </div>
