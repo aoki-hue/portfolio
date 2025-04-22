@@ -9,15 +9,11 @@ header
   background-color: common.$color-bg-header;
 
   @include layout.respond-to(pc) {
-    padding: 36px 0;
+    padding: 24px 0;
   }
 
-  // @include layout.respond-to(tb) {
-  //   padding: 28px 0;
-  // }
-
   @include layout.respond-to(sp) {
-    padding: 28px 0;
+    padding: 16px 0;
   }
 
   > .inner {
@@ -28,16 +24,11 @@ header
       align-items: baseline;
       height: 58px;
     }
-
-    // @include layout.respond-to(tb) {
-    //   align-items: baseline;
-    //   height: 58px;
-    // }
   }
 
   .header-logo {
     @include layout.respond-to(pc) {
-      width: 150px;
+      width: 175px;
       height: auto;
     }
   }
@@ -48,13 +39,6 @@ header
       display: none;
     }
   }
-
-  // @include layout.respond-to(tb) {
-  //   .menu-btn-check,
-  //   .menu-btn {
-  //     display: none;
-  //   }
-  // }
 
   // ハンバーガーメニュー
   @include layout.respond-to(sp) {
@@ -67,7 +51,7 @@ header
       width: 60px;
       justify-content: center;
       align-items: center;
-      z-index: 90;
+      z-index: 89;
       background-color: common.$color-bg-header;
 
       span,
@@ -868,6 +852,8 @@ modal
     &--button {
       @include button;
       @include layout.respond-to(pc) {
+        width: auto;
+        padding: 14px 16px 12px;
         margin: 0 0 0 auto;
       }
     }

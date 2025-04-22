@@ -118,6 +118,8 @@ const skillListCreate = (filterItems) => {
               return value.status === item;
             } else {
               switch (item) {
+                case "-年":
+                  return value.duration === "-";
                 case "0年～2年":
                   return value.duration >= 0 && value.duration <= 2;
                 case "3年～5年":
