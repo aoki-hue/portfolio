@@ -1,15 +1,19 @@
 {
+  "homepage": "http://aoki-hue.github.io/portfolio",
   "name": "portfolio",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "gulp": "^5.0.0",
     "gulp-sass": "^6.0.1",
     "sass": "^1.86.3"
