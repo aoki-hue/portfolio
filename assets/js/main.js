@@ -90,7 +90,7 @@ const slideShow = () => {
  * スキル一覧描画
  */
 const skillListCreate = (filterItems) => {
-  const jsonFile = "/assets/json/available-skill.json";
+  const jsonFile = "assets/json/available-skill.json";
   const htmlInsert = document.querySelector(".js-createSkillList");
   const skillStatus = document.querySelector(".js-skill-status");
 
@@ -168,7 +168,7 @@ const skillListCreate = (filterItems) => {
       // HTML生成
       skillArray.forEach((item) => {
         addHtml += `<li class="skill__list">`;
-        addHtml += `<img src="/assets/image/skill/${item.image.src}" alt="${item.image.alt}" class="skill__list--image" />`;
+        addHtml += `<img src="assets/image/skill/${item.image.src}" alt="${item.image.alt}" class="skill__list--image" />`;
         addHtml += `<p class="skill__list--name">${item.name}</p>`;
         switch (item.status) {
           case "得意":
