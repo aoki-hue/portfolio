@@ -9,12 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-window.addEventListener("resize", () => {
-  if (window.innerWidth < 768) {
-    slideShow();
-  }
-});
-
 /**
  * スライダー
  */
@@ -83,6 +77,16 @@ const slideShow = () => {
 
   prev.addEventListener("click", () => {
     prevClick();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      clearInterval(autoPlayInterval);
+      slide.style.transform = "";
+    } else {
+      currentIndex = 0;
+      resetAutoPlayInterval();
+    }
   });
 };
 
@@ -402,7 +406,7 @@ class Validator {
  * ページ内スクロール
  */
 const scrollTo = () => {
-  document.querySelectorAll(".nav__lists--link").forEach((anchor) => {
+  document.querySelectorAll(".js-scrollTo").forEach((anchor) => {
     anchor.addEventListener("click", (event) => {
       event.preventDefault();
 

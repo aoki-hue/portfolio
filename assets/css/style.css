@@ -395,10 +395,6 @@ main visual
   position: absolute;
   left: 50%;
   bottom: 24px;
-  cursor: pointer;
-}
-.main-visual__scroll:hover {
-  opacity: 0.9;
 }
 .main-visual__scroll--icon.fa-arrow-down {
   position: relative;
@@ -415,6 +411,18 @@ main visual
   font-size: 1.2rem;
 }
 
+.fluffy {
+  animation: fluffy 5s infinite;
+}
+
+@keyframes fluffy {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
 /* =============================================
 role
 ============================================= */
@@ -477,16 +485,7 @@ role
   width: fit-content;
   margin: 16px auto 0;
   border-radius: 50%;
-}
-@media (min-width: 767px) {
-  .role-items__box--image-wrap {
-    padding: 32px;
-  }
-}
-@media (max-width: 767px) {
-  .role-items__box--image-wrap {
-    padding: 24px;
-  }
+  padding: 36px;
 }
 .role-items__box--image-wrap.role-corder {
   background-color: #ddaa88;
@@ -623,49 +622,37 @@ available skill
   display: flex;
   flex-wrap: wrap;
   margin-top: 32px;
-}
-@media (min-width: 767px) {
-  .skills-wrap {
-    gap: 24px;
-  }
-}
-@media (max-width: 767px) {
-  .skills-wrap {
-    gap: 16px;
-  }
+  gap: 16px;
 }
 
+.skill__list {
+  background-color: #ffffff;
+  border-radius: 6px;
+}
 @media (min-width: 767px) {
   .skill__list {
-    width: calc((100% - 72px) / 4);
+    width: calc((100% - 48px) / 4);
+    padding: 24px;
   }
 }
 @media (max-width: 767px) {
   .skill__list {
     width: calc((100% - 16px) / 2);
+    padding: 16px;
   }
 }
 .skill__list--name {
   font-weight: bold;
 }
-@media (min-width: 767px) {
-  .skill__list--image {
-    width: 176px;
-    height: 176px;
-    margin: 0 auto;
-  }
-}
-@media (max-width: 767px) {
-  .skill__list--image {
-    width: 100%;
-  }
+.skill__list--image {
+  width: 100%;
 }
 .skill__list--name {
   text-align: center;
 }
 @media (min-width: 767px) {
   .skill__list--name {
-    margin: 24px 0 16px;
+    margin: 16px 0;
   }
 }
 @media (max-width: 767px) {
@@ -1144,7 +1131,22 @@ modal
 }
 
 .js-modal-working {
-  width: 80%;
+  width: 90%;
+}
+@media (min-width: 767px) {
+  .js-modal-working {
+    max-width: 386px;
+    max-height: 80%;
+  }
+}
+@media (max-width: 767px) {
+  .js-modal-working {
+    max-width: 80vw;
+  }
+}
+
+.working-modal__working {
+  position: relative;
 }
 .working-modal__working--image {
   margin-bottom: 16px;
@@ -1159,6 +1161,7 @@ modal
   text-decoration: none;
   margin-bottom: 8px;
   color: #00b5ef;
+  overflow-wrap: anywhere;
 }
 .working-modal__working--text {
   color: #ffffff;
@@ -1170,4 +1173,28 @@ modal
   right: 0;
   font-size: 2rem;
   color: #ffffff;
+}
+
+/* =============================================
+page top
+============================================= */
+.pageTop {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+}
+.pageTop-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #8a7144;
+  color: #ffffff;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.pageTop-icon::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }

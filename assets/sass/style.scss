@@ -185,11 +185,6 @@ main visual
     position: absolute;
     left: 50%;
     bottom: 24px;
-    cursor: pointer;
-
-    &:hover {
-      opacity: 0.9;
-    }
 
     &--icon {
       &.fa-arrow-down {
@@ -208,6 +203,20 @@ main visual
         }
       }
     }
+  }
+}
+
+.fluffy {
+  animation: fluffy 5s infinite;
+}
+
+@keyframes fluffy {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
   }
 }
 
@@ -261,27 +270,12 @@ role
     &--image {
       width: 100%;
       height: 100%;
-      // @include layout.respond-to(pc) {
-      //   width: 100%;
-      //   height: 100%;
-      // }
-
-      // @include layout.respond-to(sp) {
-      //   width: 173px;
-      //   height: 173px;
-      // }
     }
     &--image-wrap {
       width: fit-content;
       margin: 16px auto 0;
       border-radius: 50%;
-
-      @include layout.respond-to(pc) {
-        padding: 32px;
-      }
-      @include layout.respond-to(sp) {
-        padding: 24px;
-      }
+      padding: 36px;
 
       &.role-corder {
         background-color: common.$color-bg-corder;
@@ -436,43 +430,35 @@ available skill
   display: flex;
   flex-wrap: wrap;
   margin-top: 32px;
-
-  @include layout.respond-to(pc) {
-    gap: 24px;
-  }
-  @include layout.respond-to(sp) {
-    gap: 16px;
-  }
+  gap: 16px;
 }
 
 .skill {
   &__list {
+    background-color: common.$color-white;
+    border-radius: 6px;
+
     @include layout.respond-to(pc) {
-      width: calc((100% - 24px * 3) / 4);
+      width: calc((100% - 16px * 3) / 4);
+      padding: 24px;
     }
     @include layout.respond-to(sp) {
       width: calc((100% - 16px) / 2);
+      padding: 16px;
     }
     &--name {
       font-weight: bold;
     }
 
     &--image {
-      @include layout.respond-to(pc) {
-        width: 176px;
-        height: 176px;
-        margin: 0 auto;
-      }
-      @include layout.respond-to(sp) {
-        width: 100%;
-      }
+      width: 100%;
     }
 
     &--name {
       text-align: center;
 
       @include layout.respond-to(pc) {
-        margin: 24px 0 16px;
+        margin: 16px 0;
       }
       @include layout.respond-to(sp) {
         margin: 16px 0;
@@ -894,15 +880,21 @@ modal
 }
 
 .js-modal-working {
-  width: 80%;
+  width: 90%;
+
   @include layout.respond-to(pc) {
+    max-width: 386px;
+    max-height: 80%;
+  }
+
+  @include layout.respond-to(sp) {
+    max-width: 80vw;
   }
 }
 
 .working-modal {
   &__working {
-    @include layout.respond-to(sp) {
-    }
+    position: relative;
     &--image {
       margin-bottom: 16px;
 
@@ -910,12 +902,15 @@ modal
         width: 100%;
       }
     }
+
     &--link {
       display: inline-block;
       text-decoration: none;
       margin-bottom: 8px;
       color: common.$color-link;
+      overflow-wrap: anywhere;
     }
+
     &--text {
       color: common.$color-white;
     }
@@ -929,5 +924,31 @@ modal
     right: 0;
     font-size: 2rem;
     color: common.$color-white;
+  }
+}
+
+/* =============================================
+page top
+============================================= */
+.pageTop {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+
+  &-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: common.$color-primary;
+    color: common.$color-white;
+    border-radius: 50%;
+    pointer-events: none;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
   }
 }
