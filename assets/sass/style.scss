@@ -120,10 +120,6 @@ header
         display: flex;
       }
 
-      // @include layout.respond-to(tb) {
-      //   display: flex;
-      // }
-
       @include layout.respond-to(sp) {
         padding: 72px 24px 0;
 
@@ -173,6 +169,8 @@ header
 main visual
 ============================================= */
 .main-visual {
+  position: relative;
+
   &__inner--image {
     width: 100%;
   }
@@ -181,6 +179,44 @@ main visual
     .inner {
       padding: 0;
     }
+  }
+
+  &__scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 24px;
+
+    &--icon {
+      &.fa-arrow-down {
+        position: relative;
+        font-size: 2.4rem;
+        color: common.$color-white;
+        padding-bottom: 16px;
+
+        &::after {
+          position: absolute;
+          content: "scroll";
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 0;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+.fluffy {
+  animation: fluffy 5s infinite;
+}
+
+@keyframes fluffy {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
   }
 }
 
@@ -232,26 +268,14 @@ role
     }
 
     &--image {
-      @include layout.respond-to(pc) {
-        width: 173px;
-        height: 173px;
-      }
-      @include layout.respond-to(sp) {
-        width: 173px;
-        height: 173px;
-      }
+      width: 100%;
+      height: 100%;
     }
     &--image-wrap {
       width: fit-content;
       margin: 16px auto 0;
       border-radius: 50%;
-
-      @include layout.respond-to(pc) {
-        padding: 32px;
-      }
-      @include layout.respond-to(sp) {
-        padding: 24px;
-      }
+      padding: 36px;
 
       &.role-corder {
         background-color: common.$color-bg-corder;
@@ -280,6 +304,7 @@ role
   border-top: solid 3px common.$color-sub;
   border-right: solid 3px common.$color-sub;
 }
+
 @include layout.respond-to(pc) {
   .prev,
   .next,
@@ -290,19 +315,21 @@ role
 @include layout.respond-to(sp) {
   .next {
     @include slideBtn;
-    right: 10px;
+    right: -24px;
     transform: rotate(45deg) translateY(-50%);
   }
 
   .prev {
     @include slideBtn;
-    left: 10px;
+    left: -24px;
     transform: rotate(-135deg) translateY(-50%);
     margin-top: -8px;
   }
 
   .slide-area {
     position: relative;
+    width: fit-content;
+    margin: 0 auto;
   }
 
   .slide {
@@ -403,43 +430,35 @@ available skill
   display: flex;
   flex-wrap: wrap;
   margin-top: 32px;
-
-  @include layout.respond-to(pc) {
-    gap: 24px;
-  }
-  @include layout.respond-to(sp) {
-    gap: 16px;
-  }
+  gap: 16px;
 }
 
 .skill {
   &__list {
+    background-color: common.$color-white;
+    border-radius: 6px;
+
     @include layout.respond-to(pc) {
-      width: calc((100% - 24px * 3) / 4);
+      width: calc((100% - 16px * 3) / 4);
+      padding: 24px;
     }
     @include layout.respond-to(sp) {
       width: calc((100% - 16px) / 2);
+      padding: 16px;
     }
     &--name {
       font-weight: bold;
     }
 
     &--image {
-      @include layout.respond-to(pc) {
-        width: 176px;
-        height: 176px;
-        margin: 0 auto;
-      }
-      @include layout.respond-to(sp) {
-        width: 100%;
-      }
+      width: 100%;
     }
 
     &--name {
       text-align: center;
 
       @include layout.respond-to(pc) {
-        margin: 24px 0 16px;
+        margin: 16px 0;
       }
       @include layout.respond-to(sp) {
         margin: 16px 0;
@@ -574,12 +593,12 @@ contact
 
   .contact-form {
     @include layout.respond-to(pc) {
-      width: 760px;
+      // width: 760px;
       margin: 0 auto;
     }
-    @include layout.respond-to(sp) {
-      width: 100%;
-    }
+    // @include layout.respond-to(sp) {
+    //   width: 100%;
+    // }
 
     &__item {
       border-bottom: 1px solid common.$color-sub;
@@ -603,7 +622,7 @@ contact
       &--label {
         font-weight: bold;
         @include layout.respond-to(pc) {
-          width: calc(100% - 480px - 32px);
+          width: calc(100% / 3);
         }
         @include layout.respond-to(sp) {
           display: block;
@@ -633,7 +652,7 @@ contact
         padding: 8px 4px;
 
         @include layout.respond-to(pc) {
-          width: 480px;
+          width: calc(100% / 3 * 2);
         }
         @include layout.respond-to(sp) {
           width: 100%;
@@ -644,7 +663,7 @@ contact
         clear: both;
         padding: 4px;
         @include layout.respond-to(pc) {
-          width: 480px;
+          width: calc(100% / 3 * 2);
           height: 148px;
         }
         @include layout.respond-to(sp) {
@@ -657,7 +676,7 @@ contact
         display: none;
 
         @include layout.respond-to(pc) {
-          width: 480px;
+          width: calc(100% / 3 * 2);
         }
         @include layout.respond-to(sp) {
           width: 100%;
@@ -670,7 +689,7 @@ contact
 
         @include layout.respond-to(pc) {
           font-size: 1.4rem;
-          left: 280px;
+          left: 36%;
           bottom: 8px;
         }
         @include layout.respond-to(sp) {
@@ -860,14 +879,22 @@ modal
   }
 }
 
-.working-modal {
+.js-modal-working {
+  width: 90%;
+
   @include layout.respond-to(pc) {
-    width: 408px;
+    max-width: 386px;
+    max-height: 80%;
   }
+
+  @include layout.respond-to(sp) {
+    max-width: 80vw;
+  }
+}
+
+.working-modal {
   &__working {
-    @include layout.respond-to(sp) {
-      width: 80vw;
-    }
+    position: relative;
     &--image {
       margin-bottom: 16px;
 
@@ -875,12 +902,15 @@ modal
         width: 100%;
       }
     }
+
     &--link {
       display: inline-block;
       text-decoration: none;
       margin-bottom: 8px;
       color: common.$color-link;
+      overflow-wrap: anywhere;
     }
+
     &--text {
       color: common.$color-white;
     }
@@ -894,5 +924,31 @@ modal
     right: 0;
     font-size: 2rem;
     color: common.$color-white;
+  }
+}
+
+/* =============================================
+page top
+============================================= */
+.pageTop {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+
+  &-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: common.$color-primary;
+    color: common.$color-white;
+    border-radius: 50%;
+    pointer-events: none;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
   }
 }

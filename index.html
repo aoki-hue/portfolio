@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="apple-touch-icon" href="/favicon.png" />
   </head>
-  <body>
+  <body id="pageTop">
     <!-- modal area -->
     <div class="bg-modal hidden js-modal-background js-modal-close"></div>
 
@@ -59,16 +59,16 @@
     <!-- header -->
     <header class="header">
       <div class="inner">
-        <h1><img src="/assets/image/header-logo.svg" alt="ロゴ" class="header-logo" /></h1>
+        <h1><img src="assets/image/header-logo.svg" alt="ロゴ" class="header-logo" /></h1>
         <div class="hamburger-menu">
           <input type="checkbox" id="menu-btn-check" class="menu-btn-check" />
           <label for="menu-btn-check" class="menu-btn"><span></span></label>
           <nav class="nav">
             <ul class="nav__lists">
-              <li class="nav__lists--item"><a href="#role" class="nav__lists--link">role</a></li>
-              <li class="nav__lists--item"><a href="#skill" class="nav__lists--link">available skill</a></li>
-              <li class="nav__lists--item"><a href="#working" class="nav__lists--link">working</a></li>
-              <li class="nav__lists--item"><a href="#contact" class="nav__lists--link">contact</a></li>
+              <li class="nav__lists--item"><a href="#role" class="nav__lists--link js-scrollTo">role</a></li>
+              <li class="nav__lists--item"><a href="#skill" class="nav__lists--link js-scrollTo">available skill</a></li>
+              <li class="nav__lists--item"><a href="#working" class="nav__lists--link js-scrollTo">working</a></li>
+              <li class="nav__lists--item"><a href="#contact" class="nav__lists--link js-scrollTo">contact</a></li>
             </ul>
           </nav>
         </div>
@@ -77,9 +77,8 @@
 
     <!-- main visual -->
     <div class="main-visual">
-      <div class="inner">
-        <img src="/assets/image/main-visual.png" alt="メインビジュアル" class="main-visual__inner--image" />
-      </div>
+      <img src="assets/image/main-visual.png" alt="メインビジュアル" class="main-visual__inner--image" />
+      <div class="main-visual__scroll fluffy"><i class="fa-solid fa-arrow-down main-visual__scroll--icon"></i></div>
     </div>
 
     <!-- role -->
@@ -93,7 +92,7 @@
               <div class="role-items__box">
                 <p class="role-items__box--label">コーディング</p>
                 <div class="role-items__box--image-wrap role-corder">
-                  <img src="/assets/image/role-corder.png" alt="コーダー" class="role-items__box--image" />
+                  <img src="assets/image/role-corder.png" alt="コーダー" class="role-items__box--image" />
                 </div>
                 <p class="role-items__box--text">WEBサイトの画面開発を主にフロントエンド開発を担当し、可読性や運用・保守を意識した効率的なコードを書くことを得意としています</p>
               </div>
@@ -101,7 +100,7 @@
               <div class="role-items__box">
                 <p class="role-items__box--label">デザイン</p>
                 <div class="role-items__box--image-wrap role-designer">
-                  <img src="/assets/image/role-designer.png" alt="デザイナー" class="role-items__box--image" />
+                  <img src="assets/image/role-designer.png" alt="デザイナー" class="role-items__box--image" />
                 </div>
                 <p class="role-items__box--text">新規ページのデザインやバナー・アイコン等の素材作成を担当しています</p>
               </div>
@@ -109,7 +108,7 @@
               <div class="role-items__box">
                 <p class="role-items__box--label">ディレクション</p>
                 <div class="role-items__box--image-wrap role-director">
-                  <img src="/assets/image/role-director.png" alt="ディレクター" class="role-items__box--image" />
+                  <img src="assets/image/role-director.png" alt="ディレクター" class="role-items__box--image" />
                 </div>
                 <p class="role-items__box--text">Webサイト制作のディレクションを担当し、進行管理や品質チェックまで一貫して対応可能です。</p>
               </div>
@@ -151,22 +150,22 @@
         <h2 class="section__label">Working<span class="section__label--decorative">-&nbsp;担当役割&nbsp;-</span></h2>
         <ul class="working-list">
           <li class="working-list__item js-working-item" data-title="リクルート">
-            <img src="/assets/image/working/recruit.png" alt="リクルート" class="working-list__item--image" data-link="https://point.recruit.co.jp/" data-description="下層ページの改修・運用・保守を担当" />
+            <img src="assets/image/working/recruit.png" alt="リクルート" class="working-list__item--image" data-link="https://point.recruit.co.jp/" data-description="下層ページの改修・運用・保守を担当" />
           </li>
           <li class="working-list__item js-working-item" data-title="リクルート ポンタ">
-            <img src="/assets/image/working/recruit-ponta.png" alt="リクルート ポンタ" class="working-list__item--image" data-link="https://point.recruit.co.jp/point/" data-description="下層ページの改修・運用・保守を担当" />
+            <img src="assets/image/working/recruit-ponta.png" alt="リクルート ポンタ" class="working-list__item--image" data-link="https://point.recruit.co.jp/point/" data-description="下層ページの改修・運用・保守を担当" />
           </li>
           <li class="working-list__item js-working-item" data-title="楽天 保険">
-            <img src="/assets/image/working/insurance.png" alt="楽天 保険" class="working-list__item--image" data-link="https://hoken.rakuten.co.jp/" data-description="トップページのリニューアル、下層ページの機能改修・運用・保守" />
+            <img src="assets/image/working/insurance.png" alt="楽天 保険" class="working-list__item--image" data-link="https://hoken.rakuten.co.jp/" data-description="トップページのリニューアル、下層ページの機能改修・運用・保守" />
           </li>
           <li class="working-list__item js-working-item" data-title="楽天 保険 自動車">
-            <img src="/assets/image/working/insurance-car.png" alt="楽天 保険 自動車" class="working-list__item--image" data-link="https://insurance.rakuten.co.jp/" data-description="トップページのリニューアル、記事ページの制作" />
+            <img src="assets/image/working/insurance-car.png" alt="楽天 保険 自動車" class="working-list__item--image" data-link="https://insurance.rakuten.co.jp/" data-description="トップページのリニューアル、記事ページの制作" />
           </li>
           <li class="working-list__item js-working-item" data-title="楽天 保険 生命">
-            <img src="/assets/image/working/insurance-life.png" alt="楽天 保険 生命" class="working-list__item--image" data-link="https://hoken.rakuten.co.jp/document-request/" data-description="LPの制作、フォームの制作" />
+            <img src="assets/image/working/insurance-life.png" alt="楽天 保険 生命" class="working-list__item--image" data-link="https://hoken.rakuten.co.jp/document-request/" data-description="LPの制作、フォームの制作" />
           </li>
           <li class="working-list__item js-working-item" data-title="楽天 保険 ペット">
-            <img src="/assets/image/working/insurance-pet.png" alt="楽天 保険 ペット" class="working-list__item--image" data-link="https://hoken.rakuten.co.jp/pet/estimate/form.html?rakuten_id=1" data-description="フォームの制作、フォーム投稿後のLPの制作" />
+            <img src="assets/image/working/insurance-pet.png" alt="楽天 保険 ペット" class="working-list__item--image" data-link="https://hoken.rakuten.co.jp/pet/estimate/form.html?rakuten_id=1" data-description="フォームの制作、フォーム投稿後のLPの制作" />
           </li>
         </ul>
       </div>
@@ -180,6 +179,7 @@
           <li class="contact-tab__list selected"><span class="contact-tab__list--item">企業</span></li>
           <li class="contact-tab__list"><span class="contact-tab__list--item">個人</span></li>
         </ul> -->
+        <p style="text-align: center">※ 準備中のため、フォームの送信はできません</p>
         <form id="contactForm" action="" method="post" class="contact-form">
           <div class="contact-form__item">
             <label for="company" class="contact-form__item--label">企業名<span class="contact-form__item--require">必須</span></label>
@@ -223,10 +223,12 @@
         </form>
       </div>
     </section>
+
+    <a href="#pageTop" class="pageTop js-scrollTo"><i class="fa-solid fa-arrow-up pageTop-icon"></i></a>
     <footer class="footer">
       <div class="inner"><p class="copyright">©&nbsp;2025&nbsp;Nozomu&nbsp;Aoki</p></div>
     </footer>
 
-    <script src="/assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

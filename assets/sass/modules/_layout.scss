@@ -1,22 +1,20 @@
 /* =============================================
 レスポンシブの設定
 ============================================= */
-$breakpoint-small: 767px;
-// $breakpoint-medium: 768px;
-$breakpoint-large: 1024px;
-$breakpoint-extra-large: 1200px;
+$breakpoint-medium: 767px;
+$breakpoint-large: 1023px;
 
 @mixin respond-to($breakpoint) {
   @if $breakpoint == sp {
-    @media (max-width: #{$breakpoint-small}) {
+    @media (max-width: #{$breakpoint-medium}) {
       @content;
     }
   } @else if $breakpoint == pc {
-    @media (min-width: #{$breakpoint-small}) {
+    @media (min-width: #{$breakpoint-medium}) {
       @content;
     }
-  } @else if $breakpoint == extra-large {
-    @media (max-width: #{$breakpoint-extra-large}) {
+  } @else if $breakpoint == pc-large {
+    @media (min-width: #{$breakpoint-large}) {
       @content;
     }
   }
@@ -34,15 +32,19 @@ box
     margin-top: 56px;
   }
 }
+
 .inner {
+  width: 100%;
   @include respond-to(pc) {
-    width: $breakpoint-large;
-    margin: 0 auto;
     padding: 0 32px;
   }
 
   @include respond-to(sp) {
-    width: 100%;
     padding: 0 24px;
+  }
+
+  @include respond-to(pc-large) {
+    width: 960px;
+    margin: 0 auto;
   }
 }

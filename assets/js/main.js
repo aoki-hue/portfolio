@@ -9,12 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-window.addEventListener("resize", () => {
-  if (window.innerWidth < 768) {
-    slideShow();
-  }
-});
-
 /**
  * スライダー
  */
@@ -84,13 +78,23 @@ const slideShow = () => {
   prev.addEventListener("click", () => {
     prevClick();
   });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      clearInterval(autoPlayInterval);
+      slide.style.transform = "";
+    } else {
+      currentIndex = 0;
+      resetAutoPlayInterval();
+    }
+  });
 };
 
 /**
  * スキル一覧描画
  */
 const skillListCreate = (filterItems) => {
-  const jsonFile = "/assets/json/available-skill.json";
+  const jsonFile = "assets/json/available-skill.json";
   const htmlInsert = document.querySelector(".js-createSkillList");
   const skillStatus = document.querySelector(".js-skill-status");
 
@@ -168,7 +172,7 @@ const skillListCreate = (filterItems) => {
       // HTML生成
       skillArray.forEach((item) => {
         addHtml += `<li class="skill__list">`;
-        addHtml += `<img src="/assets/image/skill/${item.image.src}" alt="${item.image.alt}" class="skill__list--image" />`;
+        addHtml += `<img src="assets/image/skill/${item.image.src}" alt="${item.image.alt}" class="skill__list--image" />`;
         addHtml += `<p class="skill__list--name">${item.name}</p>`;
         switch (item.status) {
           case "得意":
@@ -402,7 +406,7 @@ class Validator {
  * ページ内スクロール
  */
 const scrollTo = () => {
-  document.querySelectorAll(".nav__lists--link").forEach((anchor) => {
+  document.querySelectorAll(".js-scrollTo").forEach((anchor) => {
     anchor.addEventListener("click", (event) => {
       event.preventDefault();
 
