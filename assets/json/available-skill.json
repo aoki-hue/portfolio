@@ -43,7 +43,7 @@
     "id": 5,
     "name": "jQuery",
     "image": {
-      "src": "ico_jQuery.svg",
+      "src": "ico_jquery.svg",
       "alt": "jQuery"
     },
     "status": "普通",
@@ -63,7 +63,7 @@
     "id": 7,
     "name": "React",
     "image": {
-      "src": "ico_React.svg",
+      "src": "ico_react.svg",
       "alt": "React"
     },
     "status": "勉強中",
@@ -73,7 +73,7 @@
     "id": 8,
     "name": "Github",
     "image": {
-      "src": "ico_Github.svg",
+      "src": "ico_github.svg",
       "alt": "Github"
     },
     "status": "普通",
