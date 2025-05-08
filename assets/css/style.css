@@ -374,7 +374,7 @@ header
   text-decoration: none;
 }
 .header .nav__lists--item:hover {
-  color: #fdebb0;
+  color: #8a7144;
 }
 
 /* =============================================
@@ -632,7 +632,7 @@ available skill
 @media (min-width: 767px) {
   .skill__list {
     width: calc((100% - 48px) / 4);
-    padding: 24px;
+    padding: 16px;
   }
 }
 @media (max-width: 767px) {
@@ -682,12 +682,22 @@ available skill
 }
 .skill__list--duration {
   font-weight: bold;
-  margin-top: 8px;
+  margin-top: 16px;
 }
-@media (max-width: 767px) {
-  .skill__list--duration {
-    margin-top: 16px;
-  }
+.skill__list--note {
+  font-weight: bold;
+  margin-top: 16px;
+}
+.skill__list--note-text {
+  font-weight: normal;
+}
+.skill__list--note-text a {
+  margin-top: 4px;
+  color: #00b5ef;
+  text-decoration: none;
+}
+.skill__list--note-text a:hover {
+  color: #8a7144;
 }
 
 /* =============================================

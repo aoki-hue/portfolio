@@ -187,6 +187,9 @@ const skillListCreate = (filterItems) => {
         }
         addHtml += `<span class="skill__list--status ${statusClass}">${item.status}</span>`;
         addHtml += `<p class="skill__list--duration"><span>経験年数：&nbsp;</span>${item.duration}年</p>`;
+        if (item.note !== "") {
+          addHtml += `<p class="skill__list--note">【備考】<br><span class="skill__list--note-text">${item.note}</p>`;
+        }
         addHtml += `</li>`;
       });
 

@@ -7,7 +7,8 @@
       "alt": "HTML"
     },
     "status": "得意",
-    "duration": 7
+    "duration": 7,
+    "note": ""
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
       "alt": "CSS"
     },
     "status": "得意",
-    "duration": 7
+    "duration": 7,
+    "note": ""
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
       "alt": "javascript"
     },
     "status": "普通",
-    "duration": 4
+    "duration": 4,
+    "note": ""
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
       "alt": "sass"
     },
     "status": "得意",
-    "duration": 5
+    "duration": 5,
+    "note": ""
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@
       "alt": "jQuery"
     },
     "status": "普通",
-    "duration": 5
+    "duration": 5,
+    "note": ""
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@
       "alt": "Vue.js"
     },
     "status": "普通",
-    "duration": 3
+    "duration": 3,
+    "note": ""
   },
   {
     "id": 7,
@@ -67,7 +73,8 @@
       "alt": "React"
     },
     "status": "勉強中",
-    "duration": "-"
+    "duration": "-",
+    "note": "練習で試作したサイト<br><a href='https://next-website-veou.vercel.app/' target='_blank'>React練習</a>"
   },
   {
     "id": 8,
@@ -77,7 +84,8 @@
       "alt": "Github"
     },
     "status": "普通",
-    "duration": 7
+    "duration": 7,
+    "note": ""
   },
   {
     "id": 9,
@@ -87,7 +95,8 @@
       "alt": "Sketch"
     },
     "status": "普通",
-    "duration": 3
+    "duration": 3,
+    "note": ""
   },
   {
     "id": 10,
@@ -97,6 +106,7 @@
       "alt": "photoshop"
     },
     "status": "普通",
-    "duration": 1
+    "duration": 1,
+    "note": ""
   }
 ]

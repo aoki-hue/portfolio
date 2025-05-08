@@ -440,7 +440,7 @@ available skill
 
     @include layout.respond-to(pc) {
       width: calc((100% - 16px * 3) / 4);
-      padding: 24px;
+      padding: 16px;
     }
     @include layout.respond-to(sp) {
       width: calc((100% - 16px) / 2);
@@ -470,10 +470,22 @@ available skill
     }
     &--duration {
       font-weight: bold;
-      margin-top: 8px;
+      margin-top: 16px;
+    }
+    &--note {
+      font-weight: bold;
+      margin-top: 16px;
+    }
+    &--note-text {
+      font-weight: normal;
 
-      @include layout.respond-to(sp) {
-        margin-top: 16px;
+      a {
+        margin-top: 4px;
+        color: common.$color-link;
+        text-decoration: none;
+        &:hover {
+          color: common.$color-link-hover;
+        }
       }
     }
   }
