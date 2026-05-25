@@ -1,0 +1,25 @@
+@use "../../../styles/foundation/variables" as *;
+@use "../../../styles/foundation/mixins" as *;
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: $section-width;
+  margin: 24px auto;
+
+  &__logo {
+    width: 186px;
+    height: 46px;
+  }
+}
+
+.navigation {
+  &__list {
+    display: inline-block;
+
+    & + & {
+      margin-left: 52px;
+    }
+  }
+}
