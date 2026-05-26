@@ -1,0 +1,29 @@
+@use "../../../styles/foundation" as foundation;
+
+.about {
+  display: flex;
+  gap: 56px;
+  width: foundation.$section-width-lg;
+  margin: foundation.$title-space-pc auto;
+  padding: 0 52px;
+
+  &__img {
+    width: 309px;
+  }
+
+  .about-text {
+    width: 518px;
+
+    &__title {
+      font-size: 2.4rem;
+      font-weight: bold;
+    }
+
+    &__description {
+      margin-top: 32px;
+      padding-bottom: 40px;
+      background: url(/images/about/about-desc-bg.png) no-repeat;
+      background-position: bottom 0 right 0;
+    }
+  }
+}

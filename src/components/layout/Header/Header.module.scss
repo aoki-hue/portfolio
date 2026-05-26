@@ -1,11 +1,10 @@
-@use "../../../styles/foundation/variables" as *;
-@use "../../../styles/foundation/mixins" as *;
+@use "../../../styles/foundation" as foundation;
 
 .header {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  width: $section-width;
+  width: foundation.$section-width-lg;
   margin: 24px auto;
 
   &__logo {

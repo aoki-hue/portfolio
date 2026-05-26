@@ -1,36 +1,25 @@
-// html {
-//   font-size: 10px !important;
-//   scroll-behavior: smooth;
-// }
+@use "./variables" as *;
+@use "./mixins" as *;
 
-// body {
-//   font-size: 1.6rem;
-//   line-height: 1.7;
-//   letter-spacing: 0.13em;
-//   background-color: #ffffff;
-//   color: $color-text;
-//   font-family: var(--font-zen-maru), sans-serif;
-//   //   @extend .noto;
-// }
+.sp {
+  display: none;
+  @include sp {
+    display: block;
+  }
+}
 
-// .sp {
-//   display: none;
-//   @include sp {
-//     display: block;
-//   }
-// }
+.pc {
+  display: block;
+  @include sp {
+    display: none;
+  }
+}
 
-// .pc {
-//   display: block;
-//   @include sp {
-//     display: none;
-//   }
-// }
+.section {
+  width: 100%;
+  padding: 72px 0;
+}
 
-// .section {
-//   width: 100%;
-//   max-width: $page-width;
-//   padding-left: 1.6rem;
-//   padding-right: 1.6rem;
-//   margin: 0 auto;
-// }
+.section-bg {
+  background-color: $color-bg;
+}

@@ -1,7 +1,6 @@
 @use "../styles/foundation/reset" as *;
-@use "../styles/foundation/variables" as *;
-@use "../styles/foundation/mixins" as *;
-// @use "../styles/foundation/base";
+
+$color-text: #111111;
 
 html {
   font-size: 10px !important;
@@ -18,24 +17,24 @@ body {
   //   @extend .noto;
 }
 
-.sp {
-  display: none;
-  @include sp {
-    display: block;
-  }
-}
+// .sp {
+//   display: none;
+//   @include sp {
+//     display: block;
+//   }
+// }
 
-.pc {
-  display: block;
-  @include sp {
-    display: none;
-  }
-}
+// .pc {
+//   display: block;
+//   @include sp {
+//     display: none;
+//   }
+// }
 
-.section {
-  width: 100%;
-  //   max-width: $page-width;
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
-  margin: 0 auto;
-}
+// .section {
+//   width: 100%;
+//   //   max-width: $page-width;
+//   padding-left: 1.6rem;
+//   padding-right: 1.6rem;
+//   margin: 0 auto;
+// }
