@@ -2,6 +2,7 @@
 import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
+import Skills from "@/components/sections/Skills";
 
 const Home = () => {
   return (
@@ -9,7 +10,8 @@ const Home = () => {
       <Header />
       <main>
         <Hero />
-        <About isBg={true} />
+        <About />
+        <Skills />
       </main>
     </>
   );

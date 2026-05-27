@@ -1,0 +1,21 @@
+@use "../../../styles/foundation/" as foundation;
+
+.about-conscious {
+  width: calc((100% - 56px * 3) / 4);
+
+  &__img {
+    position: relative;
+    width: auto;
+    height: 124px;
+  }
+
+  &__title {
+    margin-top: 12px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__description {
+    margin-top: 16px;
+  }
+}

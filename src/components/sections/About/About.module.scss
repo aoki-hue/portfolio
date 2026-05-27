@@ -3,9 +3,12 @@
 .about {
   display: flex;
   gap: 56px;
-  width: foundation.$section-width-lg;
-  margin: foundation.$title-space-pc auto;
   padding: 0 52px;
+
+  &__inner {
+    width: foundation.$section-width-lg;
+    margin: foundation.$title-space-pc auto;
+  }
 
   &__img {
     width: 309px;
@@ -26,4 +29,10 @@
       background-position: bottom 0 right 0;
     }
   }
+}
+
+.about-conscious-wrap {
+  display: flex;
+  gap: 0 56px;
+  margin-top: 56px;
 }
