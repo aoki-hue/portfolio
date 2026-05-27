@@ -1,12 +1,12 @@
 export type AboutCardProps = {
-  key: string;
+  id?: number;
   src: string;
   title: string;
   description: string;
 };
 
 export type SkillCardProps = {
-  index: string;
+  id?: number;
   src: string;
   skill: string;
   description: string;

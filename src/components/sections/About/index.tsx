@@ -32,9 +32,9 @@ const About = () => {
           </dl>
         </div>
         <div className={styles["about-conscious-wrap"]}>
-          {aboutCardData.map((card) => (
+          {aboutCardData.map((card, index) => (
             <AboutCard
-              key={card.key}
+              key={index}
               src={card.src}
               title={card.title}
               description={card.description}

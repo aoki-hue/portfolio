@@ -2,9 +2,9 @@ import Image from "next/image";
 import styles from "./AboutCard.module.scss";
 import { AboutCardProps } from "@/types/card";
 
-const AboutCard = ({ key, src, title, description }: AboutCardProps) => {
+const AboutCard = ({ src, title, description }: AboutCardProps) => {
   return (
-    <div key={key} className={styles["about-conscious"]}>
+    <div className={styles["about-conscious"]}>
       <div className={styles["about-conscious__img"]}>
         <Image src={`/images/about/${src}.svg`} alt={src} fill />
       </div>
