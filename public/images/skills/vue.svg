@@ -1,1 +1,10 @@
-<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Vue.js</title><path d="M24,1.61H14.06L12,5.16,9.94,1.61H0L12,22.39ZM12,14.08,5.16,2.23H9.59L12,6.41l2.41-4.18h4.43Z"/></svg>
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2132_700)">
+<path d="M40 2.68335H23.4333L20 8.60002L16.5667 2.68335H0L20 37.3167L40 2.68335ZM20 23.4667L8.6 3.71668H15.9833L20 10.6833L24.0167 3.71668H31.4L20 23.4667Z" fill="#DDAF61"/>
+</g>
+<defs>
+<clipPath id="clip0_2132_700">
+<rect width="40" height="40" fill="white"/>
+</clipPath>
+</defs>
+</svg>

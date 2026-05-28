@@ -1,1 +1,87 @@
 @use "../../../styles/foundation/" as foundation;
+
+.skill-card {
+  width: calc((100% - 56px * 3) / 4);
+
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+
+    &--html {
+      background-color: rgba(foundation.$color-html, 0.2);
+    }
+    &--javascript {
+      background-color: rgba(foundation.$color-javascript, 0.2);
+    }
+    &--sass {
+      background-color: rgba(foundation.$color-sass, 0.2);
+    }
+    &--jquery {
+      background-color: rgba(foundation.$color-jquery, 0.2);
+    }
+    &--git {
+      background-color: rgba(foundation.$color-git, 0.2);
+    }
+    &--figma {
+      background-color: rgba(foundation.$color-figma, 0.2);
+    }
+    &--react {
+      background-color: rgba(foundation.$color-react, 0.2);
+    }
+    &--vue {
+      background-color: rgba(foundation.$color-vue, 0.2);
+    }
+  }
+
+  &__title {
+    margin-top: 8px;
+    font-weight: bold;
+  }
+
+  &__description {
+    margin-top: 12px;
+  }
+
+  .skill-level {
+    display: flex;
+    gap: 0 4px;
+    margin-top: 12px;
+
+    &__scale {
+      width: calc((100% - 4px * 4) / 5);
+      height: 8px;
+      background-color: foundation.$color-disable;
+      border-radius: 6px;
+
+      &--html {
+        background-color: foundation.$color-html;
+      }
+      &--javascript {
+        background-color: foundation.$color-javascript;
+      }
+      &--sass {
+        background-color: foundation.$color-sass;
+      }
+      &--jquery {
+        background-color: foundation.$color-jquery;
+      }
+      &--git {
+        background-color: foundation.$color-git;
+      }
+      &--figma {
+        background-color: foundation.$color-figma;
+      }
+      &--react {
+        background-color: foundation.$color-react;
+      }
+      &--vue {
+        background-color: foundation.$color-vue;
+      }
+    }
+  }
+}

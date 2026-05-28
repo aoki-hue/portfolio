@@ -1,1 +1,9 @@
 @use "../../../styles/foundation" as foundation;
+
+.skills {
+  display: flex;
+  gap: 56px;
+  flex-wrap: wrap;
+  width: foundation.$section-width-lg;
+  margin: 52px auto 0;
+}

@@ -7,7 +7,17 @@ import styles from "./Skills.module.scss";
 const Skills = () => {
   return (
     <SectionContainer title="Skills" text="言語・ツール">
-      <div className={styles.skills}></div>
+      <div className={styles.skills}>
+        {skillCardData.map((card, index) => (
+          <SkillCard
+            key={index}
+            src={card.src}
+            skill={card.skill}
+            description={card.description}
+            level={card.level}
+          />
+        ))}
+      </div>
     </SectionContainer>
   );
 };
