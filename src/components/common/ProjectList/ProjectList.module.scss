@@ -1,0 +1,20 @@
+@use "../../../styles/foundation/" as foundation;
+
+.project {
+  flex: 0 0 calc((100% - 24px * 2) / 3);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+
+  // a {
+  //   display: block;
+  // }
+
+  &__img {
+    border-bottom: 1px solid #ccc;
+  }
+
+  &__text {
+    padding: 12px;
+  }
+}

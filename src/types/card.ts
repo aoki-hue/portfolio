@@ -12,3 +12,10 @@ export type SkillCardProps = {
   description: string;
   level: number;
 };
+
+export type ProjectListProps = {
+  id?: number;
+  src: string;
+  link: string;
+  text: string;
+};

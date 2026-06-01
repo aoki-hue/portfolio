@@ -1,0 +1,72 @@
+@use "../../../styles/foundation" as foundation;
+
+.projects-inner {
+  width: foundation.$section-width-lg;
+  margin: 48px auto 0;
+}
+
+.embla-wrap {
+  width: 956px;
+  margin: 0 auto;
+  border-radius: 6px;
+  background-color: #fff;
+  filter: drop-shadow(0 0 24px rgba(0, 0, 0, 0.08));
+  padding: 48px 0;
+}
+
+.embla {
+  position: relative;
+  overflow: hidden;
+  width: 738px;
+  margin: 0 auto;
+
+  &__container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+
+  &__dots {
+    margin-top: 40px;
+
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #d8d8d8;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    &--active {
+      background: #6ea9e8;
+      transform: scale(1.2);
+    }
+  }
+}
+
+.sliderControls {
+  &__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+
+    &--prev {
+      left: 48px;
+    }
+
+    &--next {
+      right: 48px;
+    }
+  }
+}
