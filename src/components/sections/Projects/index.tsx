@@ -29,9 +29,23 @@ const Projects = () => {
   useEffect(() => {
     if (!emblaApi) return;
 
-    setScrollSnaps(emblaApi.scrollSnapList());
+    // コールバック内で実行（外部システムの更新）
+    const handleInit = () => {
+      setScrollSnaps(emblaApi.scrollSnapList());
+    };
 
-    onSelect();
+    handleInit();
+    emblaApi.on("init", handleInit);
+    emblaApi.on("reInit", handleInit);
+
+    return () => {
+      emblaApi.off("init", handleInit);
+      emblaApi.off("reInit", handleInit);
+    };
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
 
     emblaApi.on("select", onSelect);
   }, [emblaApi, onSelect]);
