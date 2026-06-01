@@ -22,4 +22,8 @@
 
 .section-bg {
   background-color: $color-bg;
+
+  &.section-contact {
+    background-color: $color-secondary;
+  }
 }

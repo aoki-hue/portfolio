@@ -1,0 +1,12 @@
+@use "../../../styles/foundation" as foundation;
+
+.contact {
+  width: foundation.$section-width-lg;
+  margin: 48px auto 0;
+}
+
+.button-wrap {
+  margin-top: 56px;
+  display: flex;
+  justify-content: center;
+}

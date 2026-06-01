@@ -7,12 +7,25 @@ type Props = {
   title: string;
   text: string;
   isBg?: boolean;
+  isContact?: boolean;
   children: ReactNode;
 };
 
-const SectionContainer = ({ title, text, isBg, children }: Props) => {
+const SectionContainer = ({
+  title,
+  text,
+  isBg,
+  isContact,
+  children,
+}: Props) => {
   return (
-    <div className={clsx(styles.section, isBg && styles["section-bg"])}>
+    <div
+      className={clsx(
+        styles.section,
+        isBg && styles["section-bg"],
+        isContact && styles["section-contact"],
+      )}
+    >
       <SectionTitle sectionTitle={title} text={text} />
       {children}
     </div>

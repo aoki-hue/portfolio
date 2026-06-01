@@ -1,0 +1,30 @@
+@use "../../../../styles/foundation/" as foundation;
+
+.textarea {
+  display: flex;
+  align-items: start;
+  gap: 152px;
+  padding-top: 32px;
+  border-top: 1px solid #ccc;
+
+  //   & + & {
+  //     margin-top: 24px;
+  //     padding-top: 32px;
+  //     border-top: 1px solid #ccc;
+  //   }
+
+  &__label {
+    width: 132px;
+    flex-shrink: 0;
+  }
+
+  &__field {
+    flex: 1;
+    min-width: 0;
+    height: 148px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 4px 8px;
+  }
+}
