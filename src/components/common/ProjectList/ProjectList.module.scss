@@ -5,13 +5,15 @@
   border: 1px solid #ccc;
   border-radius: 6px;
   background-color: #fff;
-
-  // a {
-  //   display: block;
-  // }
+  overflow: hidden;
 
   &__img {
     border-bottom: 1px solid #ccc;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__text {

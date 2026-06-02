@@ -1,7 +1,9 @@
 @use "../../../styles/foundation/" as foundation;
 
 .skill-card {
+  position: relative;
   width: calc((100% - 56px * 3) / 4);
+  padding-bottom: 20px;
 
   &__img {
     display: flex;
@@ -51,6 +53,9 @@
     display: flex;
     gap: 0 4px;
     margin-top: 12px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 
     &__scale {
       width: calc((100% - 4px * 4) / 5);
