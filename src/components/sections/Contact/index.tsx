@@ -105,7 +105,7 @@ const Contact = () => {
             <div className={styles["button-wrap"]}>
               <Button
                 text="入力を修正する"
-                addClass="tertiary"
+                addClass="secondary"
                 type="button"
                 onClick={() => setStep("input")}
               />
@@ -121,11 +121,17 @@ const Contact = () => {
         )}
         {step === "complete" && (
           <>
-            <div>送信完了</div>
+            <div className={styles.contact}>
+              <p>
+                お問い合わせありがとうございます。
+                <br />
+                メッセージを受け付けました。
+              </p>
+            </div>
             <div className={styles["button-wrap"]}>
               <Button
                 text="入力へ戻る"
-                addClass="tertiary"
+                addClass="secondary"
                 type="reset"
                 onClick={() => setStep("input")}
               />

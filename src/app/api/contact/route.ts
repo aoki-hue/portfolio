@@ -10,7 +10,7 @@ export async function POST(req: Request) {
 
     await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "あなたのメールアドレス",
+      to: "no0645web@gmail.com",
       subject: "ポートフォリオからお問い合わせ",
       html: `
         <h2>お問い合わせ</h2>

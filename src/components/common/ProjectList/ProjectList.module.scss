@@ -7,8 +7,18 @@
   background-color: #fff;
   overflow: hidden;
 
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  }
+
   &__img {
     border-bottom: 1px solid #ccc;
+    height: 150px;
 
     img {
       width: 100%;

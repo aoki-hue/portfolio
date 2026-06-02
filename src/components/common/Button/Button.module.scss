@@ -6,14 +6,27 @@
   border-radius: 3px;
   text-align: center;
   transition: opacity 0.3s;
+  cursor: pointer;
 
   &.primary {
     background-color: foundation.$color-primary;
     color: #fff;
   }
 
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+  &.secondary {
+    background-color: #fff;
+    color: foundation.$color-primary;
+    border: 1px solid #ccc;
   }
+
+  & + & {
+    margin-left: 32px;
+  }
+
+  // &:disabled {
+  //   opacity: 0.5;
+  //   cursor: not-allowed;
+  //   border: 1px solid foundation.$color-secondary;
+  //   background-color: #fff;
+  // }
 }

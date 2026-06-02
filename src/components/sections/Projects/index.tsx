@@ -1,6 +1,5 @@
 "use client";
 
-// import Image from "next/image";
 import clsx from "clsx";
 import { useCallback, useEffect, useState } from "react";
 import SectionContainer from "@/components/common/SectionContainer";
@@ -19,6 +18,9 @@ const Projects = () => {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -50,19 +52,30 @@ const Projects = () => {
     emblaApi.on("select", onSelect);
   }, [emblaApi, onSelect]);
 
-  const handleNext = () => {
-    if (!emblaApi || !emblaApi.canScrollNext()) return;
+  const updateButtons = useCallback(() => {
+    if (!emblaApi) return;
 
-    console.log("next");
-    emblaApi.scrollNext();
-  };
+    setPrevBtnDisabled(!emblaApi.canScrollPrev());
+    setNextBtnDisabled(!emblaApi.canScrollNext());
+  }, [emblaApi]);
 
-  const handlePrev = () => {
-    if (!emblaApi || !emblaApi.canScrollPrev()) return;
+  useEffect(() => {
+    if (!emblaApi) return;
 
-    console.log("next");
-    emblaApi.scrollPrev();
-  };
+    // コールバック内でのみ実行（Effect本体での呼び出しを避ける）
+    const handleButtonUpdate = () => {
+      updateButtons();
+    };
+
+    handleButtonUpdate();
+    emblaApi.on("select", handleButtonUpdate);
+    emblaApi.on("reInit", handleButtonUpdate);
+
+    return () => {
+      emblaApi.off("select", handleButtonUpdate);
+      emblaApi.off("reInit", handleButtonUpdate);
+    };
+  }, [emblaApi, updateButtons]);
 
   return (
     <SectionContainer title="Projects" text="実績" isBg={true}>
@@ -83,7 +96,8 @@ const Projects = () => {
           <div className={styles.sliderControls}>
             <button
               type="button"
-              onClick={handlePrev}
+              onClick={() => emblaApi?.scrollPrev()}
+              disabled={prevBtnDisabled}
               className={clsx(
                 styles["sliderControls__btn"],
                 styles["sliderControls__btn--prev"],
@@ -93,7 +107,8 @@ const Projects = () => {
             </button>
             <button
               type="button"
-              onClick={handleNext}
+              onClick={() => emblaApi?.scrollNext()}
+              disabled={nextBtnDisabled}
               className={clsx(
                 styles["sliderControls__btn"],
                 styles["sliderControls__btn--next"],
