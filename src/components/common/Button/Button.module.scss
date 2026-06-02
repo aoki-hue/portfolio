@@ -5,9 +5,15 @@
   padding: 12px 30px;
   border-radius: 3px;
   text-align: center;
+  transition: opacity 0.3s;
 
   &.primary {
     background-color: foundation.$color-primary;
     color: #fff;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }

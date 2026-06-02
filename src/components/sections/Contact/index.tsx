@@ -18,12 +18,41 @@ const Contact = () => {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (field: keyof typeof formData) => (value: string) => {
     setFormData((prev) => ({
       ...prev,
       [field]: value,
     }));
   };
+
+  const handleSubmit = async () => {
+    if (isSubmitting) return;
+
+    try {
+      setIsSubmitting(true);
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("送信に失敗しました");
+      }
+
+      setStep("complete");
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <SectionContainer
       title="Contact"
@@ -81,10 +110,11 @@ const Contact = () => {
                 onClick={() => setStep("input")}
               />
               <Button
-                text="送信する"
+                text={isSubmitting ? "送信中..." : "送信する"}
                 addClass="primary"
                 type="submit"
-                onClick={() => setStep("complete")}
+                disabled={isSubmitting}
+                onClick={handleSubmit}
               />
             </div>
           </>
@@ -102,14 +132,6 @@ const Contact = () => {
             </div>
           </>
         )}
-        {/* <div className={styles.contact}>
-          <Input id="name" label="お名前" type="text" />
-          <Input id="email" label="メールアドレス" type="email" />
-          <TextArea id="message" label="ご用件" />
-        </div>
-        <div className={styles["button-wrap"]}>
-          <Button text="送信内容を確認する" addClass="primary" />
-        </div> */}
       </div>
     </SectionContainer>
   );
