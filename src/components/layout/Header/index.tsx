@@ -1,8 +1,14 @@
-import Image from "next/image";
+"use client";
 
+import Image from "next/image";
 import styles from "./Header.module.scss";
 
 const Header = () => {
+  const handleScroll = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <header className={styles.header}>
       <div className={styles.header__logo}>
@@ -14,10 +20,30 @@ const Header = () => {
         />
       </div>
       <ul className={styles.navigation}>
-        <li className={styles.navigation__list}>About</li>
-        <li className={styles.navigation__list}>Skills</li>
-        <li className={styles.navigation__list}>Projects</li>
-        <li className={styles.navigation__list}>Contact</li>
+        <li
+          className={styles.navigation__list}
+          onClick={() => handleScroll("about")}
+        >
+          About
+        </li>
+        <li
+          className={styles.navigation__list}
+          onClick={() => handleScroll("skills")}
+        >
+          Skills
+        </li>
+        <li
+          className={styles.navigation__list}
+          onClick={() => handleScroll("projects")}
+        >
+          Projects
+        </li>
+        <li
+          className={styles.navigation__list}
+          onClick={() => handleScroll("contact")}
+        >
+          Contact
+        </li>
       </ul>
     </header>
   );
