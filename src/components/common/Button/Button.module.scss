@@ -23,10 +23,11 @@
     margin-left: 32px;
   }
 
-  // &:disabled {
-  //   opacity: 0.5;
-  //   cursor: not-allowed;
-  //   border: 1px solid foundation.$color-secondary;
-  //   background-color: #fff;
-  // }
+  &:disabled {
+    // opacity: 0.5;
+    cursor: not-allowed;
+    border: 2px dotted foundation.$color-disable;
+    color: foundation.$color-disable;
+    background-color: #fff;
+  }
 }

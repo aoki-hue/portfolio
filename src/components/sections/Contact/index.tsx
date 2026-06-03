@@ -1,7 +1,7 @@
 "use client";
 
 // import clsx from "clsx";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import SectionContainer from "@/components/common/SectionContainer";
 import Input from "@/components/common/form/Input";
 import Confirm from "@/components/common/form/Confirm";
@@ -18,15 +18,52 @@ const Contact = () => {
     message: "",
   });
 
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (field: keyof typeof formData) => (value: string) => {
-    setFormData((prev) => ({
-      ...prev,
-      [field]: value,
-    }));
+  // フォームの入力値を検証する（バリデーションチェック）
+  const validate = (data: typeof formData) => {
+    return {
+      name: data.name.trim() === "" ? "お名前を入力してください" : "",
+      email:
+        data.email.trim() === ""
+          ? "メールアドレスを入力してください"
+          : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)
+            ? "メールアドレス形式で入力してください"
+            : "",
+      message:
+        data.message.trim() === "" ? "お問い合わせ内容を入力してください" : "",
+    };
   };
 
+  // フォームの入力値が変更された際、formDataを更新する
+  const handleChange = (field: keyof typeof formData) => (value: string) => {
+    const newFormData = {
+      ...formData,
+      [field]: value,
+    };
+
+    setFormData(newFormData);
+    setErrors(validate(newFormData));
+  };
+
+  // バリデーションチェックの結果により、確認ボタンの状態を 活性/非活性にする
+  const isValid = useMemo(() => {
+    return (
+      Object.values(errors).every((error) => error === "") &&
+      Object.values(formData).every((value) => value.trim() !== "")
+    );
+  }, [errors, formData]);
+  // const isValid =
+  //   Object.values(errors).every((error) => error === "") &&
+  //   Object.values(formData).every((value) => value.trim() !== "");
+
+  // 送信ボタンを押下した際、APIにデータを送信する
   const handleSubmit = async () => {
     if (isSubmitting) return;
 
@@ -71,6 +108,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange("name")}
               />
+              {errors.name && <p className={styles.error}>{errors.name}</p>}
               <Input
                 id="email"
                 label="メールアドレス"
@@ -78,19 +116,26 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange("email")}
               />
+              {errors.email && <p className={styles.error}>{errors.email}</p>}
               <TextArea
                 id="message"
                 label="ご用件"
                 value={formData.message}
                 onChange={handleChange("message")}
               />
+              {errors.message && (
+                <p className={styles.error}>{errors.message}</p>
+              )}
             </div>
             <div className={styles["button-wrap"]}>
               <Button
-                text="送信内容を確認する"
+                text={
+                  isValid ? "入力内容を確認する" : "入力内容を確認してください"
+                }
                 addClass="primary"
                 type="button"
                 onClick={() => setStep("confirm")}
+                disabled={!isValid}
               />
             </div>
           </>
