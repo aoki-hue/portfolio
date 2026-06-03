@@ -5,10 +5,11 @@ type Props = {
   label: string;
   type: string;
   value: string;
+  error: string | undefined;
   onChange: (value: string) => void;
 };
 
-const Input = ({ id, label, type, value, onChange }: Props) => {
+const Input = ({ id, label, type, value, error, onChange }: Props) => {
   return (
     <div className={styles.input}>
       <label htmlFor={id} className={styles.input__label}>
@@ -21,6 +22,7 @@ const Input = ({ id, label, type, value, onChange }: Props) => {
         value={value}
         onChange={(e) => onChange(e.target.value)}
       />
+      {error && <p className={styles.error}>{error}</p>}
     </div>
   );
 };

@@ -4,10 +4,11 @@ type Props = {
   id: string;
   label: string;
   value: string;
+  error: string;
   onChange: (value: string) => void;
 };
 
-const TextArea = ({ id, label, value, onChange }: Props) => {
+const TextArea = ({ id, label, value, error, onChange }: Props) => {
   return (
     <div className={styles.textarea}>
       <label htmlFor={id} className={styles.textarea__label}>
@@ -19,6 +20,7 @@ const TextArea = ({ id, label, value, onChange }: Props) => {
         value={value}
         onChange={(e) => onChange(e.target.value)}
       />
+      {error && <p className={styles.error}>{error}</p>}
     </div>
   );
 };

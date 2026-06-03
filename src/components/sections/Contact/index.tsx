@@ -1,6 +1,5 @@
 "use client";
 
-// import clsx from "clsx";
 import { useState, useMemo } from "react";
 import SectionContainer from "@/components/common/SectionContainer";
 import Input from "@/components/common/form/Input";
@@ -59,9 +58,6 @@ const Contact = () => {
       Object.values(formData).every((value) => value.trim() !== "")
     );
   }, [errors, formData]);
-  // const isValid =
-  //   Object.values(errors).every((error) => error === "") &&
-  //   Object.values(formData).every((value) => value.trim() !== "");
 
   // 送信ボタンを押下した際、APIにデータを送信する
   const handleSubmit = async () => {
@@ -107,25 +103,23 @@ const Contact = () => {
                 type="text"
                 value={formData.name}
                 onChange={handleChange("name")}
+                error={errors.name}
               />
-              {errors.name && <p className={styles.error}>{errors.name}</p>}
               <Input
                 id="email"
                 label="メールアドレス"
                 type="email"
                 value={formData.email}
                 onChange={handleChange("email")}
+                error={errors.email}
               />
-              {errors.email && <p className={styles.error}>{errors.email}</p>}
               <TextArea
                 id="message"
                 label="ご用件"
                 value={formData.message}
                 onChange={handleChange("message")}
+                error={errors.message}
               />
-              {errors.message && (
-                <p className={styles.error}>{errors.message}</p>
-              )}
             </div>
             <div className={styles["button-wrap"]}>
               <Button

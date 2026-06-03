@@ -1,17 +1,12 @@
 @use "../../../../styles/foundation/" as foundation;
 
 .textarea {
+  position: relative;
   display: flex;
   align-items: start;
   gap: 152px;
   padding-top: 32px;
   border-top: 1px solid #ccc;
-
-  //   & + & {
-  //     margin-top: 24px;
-  //     padding-top: 32px;
-  //     border-top: 1px solid #ccc;
-  //   }
 
   &__label {
     width: 132px;
@@ -27,4 +22,12 @@
     border-radius: 3px;
     padding: 4px 8px;
   }
+}
+
+.error {
+  position: absolute;
+  bottom: -24px;
+  left: 284px;
+  font-size: foundation.$font-size-small;
+  color: foundation.$color-error;
 }
