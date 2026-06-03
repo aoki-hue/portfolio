@@ -1,0 +1,9 @@
+@use "./variables" as *;
+
+@mixin form-error {
+  position: absolute;
+  bottom: -24px;
+  left: 284px;
+  font-size: $font-size-small;
+  color: $color-error;
+}

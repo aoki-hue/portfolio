@@ -24,7 +24,6 @@
   }
 
   &:disabled {
-    // opacity: 0.5;
     cursor: not-allowed;
     border: 2px dotted foundation.$color-disable;
     color: foundation.$color-disable;

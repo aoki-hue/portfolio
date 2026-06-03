@@ -1,4 +1,4 @@
-@use "../../../../styles/foundation/" as foundation;
+@use "../../../../styles/foundation" as foundation;
 
 .input {
   position: relative;
@@ -30,9 +30,5 @@
 }
 
 .error {
-  position: absolute;
-  bottom: -24px;
-  left: 284px;
-  font-size: foundation.$font-size-small;
-  color: foundation.$color-error;
+  @include foundation.form-error;
 }
