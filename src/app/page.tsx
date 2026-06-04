@@ -14,7 +14,9 @@ const Home = () => {
     <>
       <Header />
       <main>
-        <Hero />
+        <div id="hero">
+          <Hero />
+        </div>
         <motion.section
           id="about"
           initial={{
