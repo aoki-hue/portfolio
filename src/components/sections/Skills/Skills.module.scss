@@ -6,4 +6,10 @@
   flex-wrap: wrap;
   width: foundation.$section-width-lg;
   margin: 52px auto 0;
+
+  @include foundation.sm {
+    width: 100%;
+    gap: 16px;
+    padding: 0 24px;
+  }
 }

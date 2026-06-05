@@ -8,19 +8,33 @@
   padding-top: 32px;
   border-top: 1px solid #ccc;
 
+  @include foundation.sm {
+    flex-direction: column;
+    gap: 0;
+  }
+
   &__label {
     width: 132px;
     flex-shrink: 0;
+
+    @include foundation.sm {
+      width: 100%;
+    }
   }
 
   &__field {
     flex: 1;
     min-width: 0;
-    height: 148px;
+    min-height: 148px;
     border: 1px solid #ccc;
     background-color: #fff;
     border-radius: 3px;
     padding: 4px 8px;
+
+    @include foundation.sm {
+      width: 100%;
+      margin-top: 16px;
+    }
   }
 }
 

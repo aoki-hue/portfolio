@@ -3,6 +3,10 @@
 .about-conscious {
   width: calc((100% - 56px * 3) / 4);
 
+  @include foundation.sm {
+    width: 100%;
+  }
+
   &__img {
     position: relative;
     width: auto;

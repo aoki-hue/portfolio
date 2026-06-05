@@ -21,6 +21,10 @@
 
   & + & {
     margin-left: 32px;
+
+    @include foundation.sm {
+      margin: 0;
+    }
   }
 
   &:disabled {

@@ -5,6 +5,11 @@
   width: calc((100% - 56px * 3) / 4);
   padding-bottom: 20px;
 
+  @include foundation.sm {
+    width: calc((100% - 16px) / 2);
+    padding-bottom: 16px;
+  }
+
   &__img {
     display: flex;
     align-items: center;

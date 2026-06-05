@@ -103,7 +103,6 @@ const Contact = () => {
       <div className={styles["contact-inner"]}>
         <AnimatePresence mode="wait">
           <motion.div
-            className={styles["embla-wrap"]}
             initial={{
               opacity: 0,
               y: 40,

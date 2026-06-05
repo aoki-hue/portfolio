@@ -15,6 +15,11 @@ const Projects = () => {
     loop: false,
     align: "start",
     slidesToScroll: 3,
+    breakpoints: {
+      "(max-width: 767px)": {
+        slidesToScroll: 1,
+      },
+    },
   });
 
   const [selectedIndex, setSelectedIndex] = useState(0);

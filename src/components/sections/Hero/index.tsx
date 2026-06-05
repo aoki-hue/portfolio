@@ -62,7 +62,7 @@ const Hero = () => {
             HTML / CSS / Sass / JavaScript
           </motion.p>
         </div>
-        <motion.div variants={image}>
+        <motion.div variants={image} className={styles.hero__img}>
           <Image
             src="/images/hero/hero.png"
             alt="ヒーローイメージ"

@@ -3,6 +3,10 @@
 .hero {
   position: relative;
 
+  @include foundation.sm {
+    height: 492px;
+  }
+
   &__bg {
     position: absolute;
     top: 0;
@@ -18,6 +22,19 @@
     width: 1020px;
     padding-top: 64px;
     margin: 0 auto 44px;
+
+    @include foundation.sm {
+      width: 100%;
+      flex-direction: column;
+      margin: 0;
+      padding: 24px;
+    }
+  }
+
+  &__textArea {
+    @include foundation.sm {
+      z-index: 1;
+    }
   }
 
   &__lead {
@@ -25,12 +42,36 @@
     font-size: 4rem;
     font-weight: normal;
     padding: 40px;
-    background-color: #fff;
+    background: rgba(255, 255, 255, 0.72);
+
+    @include foundation.sm {
+      font-size: 2.4rem;
+      padding: 16px;
+    }
   }
 
   &__text {
     font-size: 2.4rem;
     margin-top: 32px;
     padding-left: 40px;
+
+    @include foundation.sm {
+      font-size: 1.4rem;
+      margin-top: 16px;
+      padding-left: 0;
+      -webkit-text-stroke: 2px #fff;
+      text-stroke: 2px #fff;
+      paint-order: stroke fill;
+    }
+  }
+
+  &__img {
+    @include foundation.sm {
+      position: absolute;
+      top: 118px;
+      right: 0px;
+      width: 90%;
+      aspect-ratio: 50 / 49;
+    }
   }
 }
