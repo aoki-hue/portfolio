@@ -4,6 +4,7 @@ import SectionTitle from "@/components/common/SectionTitle";
 import styles from "./SectionContainer.module.scss";
 
 type Props = {
+  id: string;
   title: string;
   text: string;
   isBg?: boolean;
@@ -12,6 +13,7 @@ type Props = {
 };
 
 const SectionContainer = ({
+  id,
   title,
   text,
   isBg,
@@ -19,7 +21,8 @@ const SectionContainer = ({
   children,
 }: Props) => {
   return (
-    <div
+    <section
+      id={id}
       className={clsx(
         styles.section,
         isBg && styles["section-bg"],
@@ -28,7 +31,7 @@ const SectionContainer = ({
     >
       <SectionTitle sectionTitle={title} text={text} />
       {children}
-    </div>
+    </section>
   );
 };
 

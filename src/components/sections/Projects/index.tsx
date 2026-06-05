@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import clsx from "clsx";
 import { useCallback, useEffect, useState } from "react";
 import SectionContainer from "@/components/common/SectionContainer";
@@ -78,9 +79,26 @@ const Projects = () => {
   }, [emblaApi, updateButtons]);
 
   return (
-    <SectionContainer title="Projects" text="実績" isBg={true}>
+    <SectionContainer id="projects" title="Projects" text="実績" isBg={true}>
       <div className={styles["projects-inner"]}>
-        <div className={styles["embla-wrap"]}>
+        <motion.div
+          className={styles["embla-wrap"]}
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
+        >
           <div className={styles.embla} ref={emblaRef}>
             <ul className={styles.embla__container}>
               {projectData.map((project, index) => (
@@ -128,7 +146,7 @@ const Projects = () => {
               />
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </SectionContainer>
   );

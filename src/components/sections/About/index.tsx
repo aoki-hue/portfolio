@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import Image from "next/image";
 import SectionContainer from "@/components/common/SectionContainer";
 import AboutCard from "@/components/common/AboutCard";
@@ -6,9 +9,27 @@ import styles from "./About.module.scss";
 
 const About = () => {
   return (
-    <SectionContainer title="About" text="自己紹介" isBg={true}>
+    <SectionContainer id="about" title="About" text="自己紹介" isBg={true}>
       <div className={styles.about__inner}>
-        <div className={styles.about}>
+        <motion.div
+          className={styles.about}
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
+        >
+          {/* <div className={styles.about}> */}
           <div className={styles.about__img}>
             <Image
               src="/images/about/about-img.png"
@@ -30,8 +51,26 @@ const About = () => {
               利用するユーザーにとって心地よく、長く使えるUIを作ることを大切にしています。
             </dd>
           </dl>
-        </div>
-        <div className={styles["about-conscious-wrap"]}>
+          {/* </div> */}
+        </motion.div>
+        <motion.div
+          className={styles["about-conscious-wrap"]}
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
+        >
           {aboutCardData.map((card, index) => (
             <AboutCard
               key={index}
@@ -40,7 +79,7 @@ const About = () => {
               description={card.description}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
     </SectionContainer>
   );

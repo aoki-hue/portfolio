@@ -94,6 +94,7 @@ const Contact = () => {
 
   return (
     <SectionContainer
+      id="contact"
       title="Contact"
       text="お問い合わせ"
       isBg={true}
@@ -101,109 +102,128 @@ const Contact = () => {
     >
       <div className={styles["contact-inner"]}>
         <AnimatePresence mode="wait">
-          {step === "input" && (
-            <motion.div
-              key="input"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className={styles.contact}>
-                <Input
-                  id="name"
-                  label="お名前"
-                  type="text"
-                  value={formData.name}
-                  onChange={handleChange("name")}
-                  error={errors.name}
-                />
-                <Input
-                  id="email"
-                  label="メールアドレス"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange("email")}
-                  error={errors.email}
-                />
-                <TextArea
-                  id="message"
-                  label="ご用件"
-                  value={formData.message}
-                  onChange={handleChange("message")}
-                  error={errors.message}
-                />
-              </div>
-              <div className={styles["button-wrap"]}>
-                <Button
-                  text={
-                    isValid
-                      ? "入力内容を確認する"
-                      : "入力内容を確認してください"
-                  }
-                  addClass="primary"
-                  type="button"
-                  onClick={() => setStep("confirm")}
-                  disabled={!isValid}
-                />
-              </div>
-            </motion.div>
-          )}
-          {step === "confirm" && (
-            <motion.div
-              key="confirm"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className={styles.contact}>
-                <Confirm label="お名前" value={formData.name} />
-                <Confirm label="メールアドレス" value={formData.email} />
-                <Confirm label="ご用件" value={formData.message} />
-              </div>
-              <div className={styles["button-wrap"]}>
-                <Button
-                  text="入力を修正する"
-                  addClass="secondary"
-                  type="button"
-                  onClick={() => setStep("input")}
-                />
-                <Button
-                  text={isSubmitting ? "送信中..." : "送信する"}
-                  addClass="primary"
-                  type="submit"
-                  disabled={isSubmitting}
-                  onClick={handleSubmit}
-                />
-              </div>
-            </motion.div>
-          )}
-          {step === "complete" && (
-            <motion.div
-              key="complete"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className={styles.contact}>
-                <p>
-                  お問い合わせありがとうございます。
-                  <br />
-                  メッセージを受け付けました。
-                </p>
-              </div>
-              <div className={styles["button-wrap"]}>
-                <Button
-                  text="入力へ戻る"
-                  addClass="secondary"
-                  type="reset"
-                  onClick={() => setStep("input")}
-                />
-              </div>
-            </motion.div>
-          )}
+          <motion.div
+            className={styles["embla-wrap"]}
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.3,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+          >
+            {step === "input" && (
+              <motion.div
+                key="input"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className={styles.contact}>
+                  <Input
+                    id="name"
+                    label="お名前"
+                    type="text"
+                    value={formData.name}
+                    onChange={handleChange("name")}
+                    error={errors.name}
+                  />
+                  <Input
+                    id="email"
+                    label="メールアドレス"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange("email")}
+                    error={errors.email}
+                  />
+                  <TextArea
+                    id="message"
+                    label="ご用件"
+                    value={formData.message}
+                    onChange={handleChange("message")}
+                    error={errors.message}
+                  />
+                </div>
+                <div className={styles["button-wrap"]}>
+                  <Button
+                    text={
+                      isValid
+                        ? "入力内容を確認する"
+                        : "入力内容を確認してください"
+                    }
+                    addClass="primary"
+                    type="button"
+                    onClick={() => setStep("confirm")}
+                    disabled={!isValid}
+                  />
+                </div>
+              </motion.div>
+            )}
+            {step === "confirm" && (
+              <motion.div
+                key="confirm"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className={styles.contact}>
+                  <Confirm label="お名前" value={formData.name} />
+                  <Confirm label="メールアドレス" value={formData.email} />
+                  <Confirm label="ご用件" value={formData.message} />
+                </div>
+                <div className={styles["button-wrap"]}>
+                  <Button
+                    text="入力を修正する"
+                    addClass="secondary"
+                    type="button"
+                    onClick={() => setStep("input")}
+                  />
+                  <Button
+                    text={isSubmitting ? "送信中..." : "送信する"}
+                    addClass="primary"
+                    type="submit"
+                    disabled={isSubmitting}
+                    onClick={handleSubmit}
+                  />
+                </div>
+              </motion.div>
+            )}
+            {step === "complete" && (
+              <motion.div
+                key="complete"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className={styles.contact}>
+                  <p>
+                    お問い合わせありがとうございます。
+                    <br />
+                    メッセージを受け付けました。
+                  </p>
+                </div>
+                <div className={styles["button-wrap"]}>
+                  <Button
+                    text="入力へ戻る"
+                    addClass="secondary"
+                    type="reset"
+                    onClick={() => setStep("input")}
+                  />
+                </div>
+              </motion.div>
+            )}
+          </motion.div>
         </AnimatePresence>
       </div>
     </SectionContainer>
