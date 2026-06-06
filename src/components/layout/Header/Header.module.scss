@@ -31,26 +31,55 @@
   width: foundation.$section-width-lg;
   margin: 24px auto;
 
+  @include foundation.sm {
+    width: 100%;
+    margin: 24px 0;
+    padding: 0 24px;
+  }
+
   &__logo {
     width: 186px;
     height: 46px;
   }
 
   &__hamburger {
+    display: none;
+
+    @include foundation.sm {
+      display: initial;
+    }
+
     &--compact {
+      display: initial;
       position: fixed;
       right: 48px;
       z-index: 1000;
+
+      @include foundation.sm {
+        right: 24px;
+      }
     }
   }
 }
 
 .navigation {
+  @include foundation.sm {
+    display: none;
+  }
+
   &__list {
     @include hover-line;
 
     & + & {
       margin-left: 52px;
+    }
+  }
+
+  &--sm {
+    display: none;
+
+    @include foundation.sm {
+      display: initial;
     }
   }
 }
@@ -73,6 +102,10 @@
   display: flex;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
+
+  @include foundation.sm {
+    width: 75vw;
+  }
 
   &__navigation {
     display: flex;

@@ -35,54 +35,50 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      {!isCompact && (
-        <div className={styles.header__logo}>
-          <Image
-            src="/images/header/header-logo.svg"
-            alt="ロゴ"
-            width={186}
-            height={46}
-          />
-        </div>
-      )}
+      <div className={styles.header__logo}>
+        <Image
+          src="/images/header/header-logo.svg"
+          alt="ロゴ"
+          width={186}
+          height={46}
+        />
+      </div>
 
-      {!isCompact ? (
-        <ul className={styles.navigation}>
-          <li
-            className={styles.navigation__list}
-            onClick={() => handleScrollSection("about")}
-          >
-            About
-          </li>
-          <li
-            className={styles.navigation__list}
-            onClick={() => handleScrollSection("skills")}
-          >
-            Skills
-          </li>
-          <li
-            className={styles.navigation__list}
-            onClick={() => handleScrollSection("projects")}
-          >
-            Projects
-          </li>
-          <li
-            className={styles.navigation__list}
-            onClick={() => handleScrollSection("contact")}
-          >
-            Contact
-          </li>
-        </ul>
-      ) : !isMenuOpen ? (
-        <button
-          className={clsx(styles.header__hamburger, {
-            [styles["header__hamburger--compact"]]: isCompact,
-          })}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+      <ul className={styles.navigation}>
+        <li
+          className={styles.navigation__list}
+          onClick={() => handleScrollSection("about")}
         >
-          <Menu size={48} />
-        </button>
-      ) : null}
+          About
+        </li>
+        <li
+          className={styles.navigation__list}
+          onClick={() => handleScrollSection("skills")}
+        >
+          Skills
+        </li>
+        <li
+          className={styles.navigation__list}
+          onClick={() => handleScrollSection("projects")}
+        >
+          Projects
+        </li>
+        <li
+          className={styles.navigation__list}
+          onClick={() => handleScrollSection("contact")}
+        >
+          Contact
+        </li>
+      </ul>
+      <button
+        className={clsx(styles.header__hamburger, {
+          [styles["header__hamburger--compact"]]: isCompact,
+        })}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        <Menu size={48} />
+      </button>
+
       <AnimatePresence>
         {isMenuOpen && (
           <>

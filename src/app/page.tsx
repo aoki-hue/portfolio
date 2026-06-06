@@ -11,7 +11,7 @@ import Footer from "@/components/layout/Footer";
 const Home = () => {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <main>
         <div id="hero">
           <Hero />
