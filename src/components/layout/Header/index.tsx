@@ -70,14 +70,16 @@ const Header = () => {
           Contact
         </li>
       </ul>
-      <button
-        className={clsx(styles.header__hamburger, {
-          [styles["header__hamburger--compact"]]: isCompact,
-        })}
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
-        <Menu size={48} />
-      </button>
+      {!isMenuOpen && (
+        <button
+          className={clsx(styles.header__hamburger, {
+            [styles["header__hamburger--compact"]]: isCompact,
+          })}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <Menu size={48} />
+        </button>
+      )}
 
       <AnimatePresence>
         {isMenuOpen && (
