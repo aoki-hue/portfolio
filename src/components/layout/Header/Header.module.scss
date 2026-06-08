@@ -1,0 +1,135 @@
+@use "../../../styles/foundation" as foundation;
+
+@mixin hover-line {
+  display: inline-block;
+  cursor: pointer;
+  padding-bottom: 5px;
+  position: relative;
+
+  &::before {
+    background: foundation.$color-primary;
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: transform 0.3s;
+  }
+  &:hover::before {
+    transform-origin: center top;
+    transform: scale(1, 1);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: min(foundation.$section-width-lg, calc(100% - 48px));
+  margin: 24px auto;
+
+  @include foundation.sm {
+    width: 100%;
+    margin: 24px 0;
+    padding: 0 24px;
+  }
+
+  &__logo {
+    width: 186px;
+    height: 46px;
+  }
+
+  &__hamburger {
+    display: none;
+
+    @include foundation.sm {
+      display: initial;
+    }
+
+    &--compact {
+      display: initial;
+      position: fixed;
+      right: 48px;
+      z-index: 1000;
+
+      @include foundation.sm {
+        right: 24px;
+      }
+    }
+
+    &--menuOpen {
+      display: none;
+    }
+  }
+}
+
+.navigation {
+  @include foundation.sm {
+    display: none;
+  }
+
+  &__list {
+    @include hover-line;
+
+    & + & {
+      margin-left: 52px;
+    }
+  }
+
+  &--sm {
+    display: none;
+
+    @include foundation.sm {
+      display: initial;
+    }
+  }
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+}
+
+.menu {
+  position: fixed;
+  flex-direction: column;
+  top: 0;
+  right: 0;
+  width: 25vw;
+  height: 100vh;
+  z-index: 999;
+  display: flex;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+
+  @include foundation.sm {
+    width: 75vw;
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 72px;
+  }
+
+  &__list {
+    @include hover-line;
+    font-size: 2rem;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  &__close {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #ccc;
+  }
+}

@@ -1,0 +1,22 @@
+@use "../styles/foundation/reset" as *;
+@use "../styles/foundation/mixins" as *;
+
+$color-text: #111111;
+
+html {
+  font-size: 10px !important;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  letter-spacing: 0.13em;
+  background-color: #ffffff;
+  color: $color-text;
+  font-family: var(--font-zen-maru), sans-serif;
+
+  @include sm {
+    font-size: 1.4rem;
+  }
+}

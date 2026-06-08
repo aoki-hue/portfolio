@@ -1,0 +1,44 @@
+@use "../../../styles/foundation/" as foundation;
+
+.project {
+  flex: 0 0 calc((100% - 24px * 2) / 3);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  overflow: hidden;
+
+  @include foundation.sm {
+    flex: 0 0 calc((100% - 8px) / 2);
+  }
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  &__img {
+    border-bottom: 1px solid #ccc;
+    height: 150px;
+
+    @include foundation.sm {
+      height: auto;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__text {
+    padding: 12px;
+
+    @include foundation.sm {
+      padding: 8px;
+    }
+  }
+}
