@@ -1,0 +1,32 @@
+@use "../../../styles/foundation" as foundation;
+
+.contact-inner {
+  @include foundation.sm {
+    margin-top: 32px;
+    padding: 0 24px;
+  }
+}
+
+.contact {
+  width: min(foundation.$section-width-lg, calc(100% - 48px));
+  margin: 48px auto 0;
+  padding: 0 72px;
+
+  @include foundation.sm {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.button-wrap {
+  margin-top: 56px;
+  display: flex;
+  justify-content: center;
+
+  @include foundation.sm {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 40px;
+  }
+}

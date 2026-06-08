@@ -1,0 +1,35 @@
+@use "../../../../styles/foundation/" as foundation;
+
+.confirm {
+  display: flex;
+  align-items: center;
+  gap: 152px;
+  margin-bottom: 32px;
+
+  @include foundation.sm {
+    flex-direction: column;
+    gap: 0;
+    align-items: start;
+  }
+
+  & + & {
+    margin-top: 24px;
+    padding-top: 32px;
+    border-top: 1px solid #ccc;
+  }
+
+  &__label {
+    width: 132px;
+    flex-shrink: 0;
+
+    @include foundation.sm {
+      width: 100%;
+    }
+  }
+
+  &__field {
+    flex: 1;
+    min-width: 0;
+    height: auto;
+  }
+}

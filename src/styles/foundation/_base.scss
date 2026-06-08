@@ -1,0 +1,33 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.sp {
+  display: none;
+  @include sp {
+    display: block;
+  }
+}
+
+.pc {
+  display: block;
+  @include sp {
+    display: none;
+  }
+}
+
+.section {
+  width: 100%;
+  padding: 72px 0;
+
+  @include sp {
+    padding: 56px 0;
+  }
+}
+
+.section-bg {
+  background-color: $color-bg;
+
+  &.section-contact {
+    background-color: $color-secondary;
+  }
+}

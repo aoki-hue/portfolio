@@ -1,0 +1,100 @@
+@use "../../../styles/foundation" as foundation;
+
+.projects-inner {
+  width: min(foundation.$section-width-lg, calc(100% - 48px));
+  margin: 48px auto 0;
+
+  @include foundation.sm {
+    width: 100%;
+    padding: 0 12px;
+  }
+}
+
+.embla-wrap {
+  width: min(956px, 100%);
+  margin: 0 auto;
+  border-radius: 6px;
+  background-color: #fff;
+  filter: drop-shadow(0 0 24px rgba(0, 0, 0, 0.08));
+  padding: 40px 0 48px;
+
+  @include foundation.sm {
+    width: 100%;
+    padding: 24px 40px;
+  }
+}
+
+.embla {
+  position: relative;
+  overflow: hidden;
+  width: calc(100% - 110px * 2);
+  margin: 0 auto;
+
+  @include foundation.sm {
+    width: 100%;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    padding-top: 8px;
+  }
+
+  &__dots {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+
+    @include foundation.sm {
+      margin-top: 24px;
+    }
+  }
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background: #d8d8d8;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &--active {
+      background: #6ea9e8;
+      transform: scale(1.2);
+    }
+  }
+}
+
+.sliderControls {
+  &__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &--prev {
+      left: 48px;
+
+      @include foundation.sm {
+        left: 4px;
+      }
+    }
+
+    &--next {
+      right: 48px;
+
+      @include foundation.sm {
+        right: 4px;
+      }
+    }
+  }
+}

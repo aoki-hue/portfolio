@@ -1,0 +1,29 @@
+import type { Metadata } from "next";
+import { Zen_Maru_Gothic } from "next/font/google";
+
+import "./globals.scss";
+
+export const metadata: Metadata = {
+  title: "ポートフォリオ",
+  description: "マークアップエンジニアのポートフォリオ",
+};
+
+const zenMaru = Zen_Maru_Gothic({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-zen-maru",
+});
+
+const RootLayout = ({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) => {
+  return (
+    <html lang="ja">
+      <body className={zenMaru.variable}>{children}</body>
+    </html>
+  );
+};
+
+export default RootLayout;

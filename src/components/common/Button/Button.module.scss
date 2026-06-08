@@ -1,0 +1,36 @@
+@use "../../../styles/foundation/" as foundation;
+
+.button {
+  font-weight: bold;
+  padding: 12px 30px;
+  border-radius: 3px;
+  text-align: center;
+  transition: opacity 0.3s;
+  cursor: pointer;
+
+  &.primary {
+    background-color: foundation.$color-primary;
+    color: #fff;
+  }
+
+  &.secondary {
+    background-color: #fff;
+    color: foundation.$color-primary;
+    border: 1px solid #ccc;
+  }
+
+  & + & {
+    margin-left: 32px;
+
+    @include foundation.sm {
+      margin: 0;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    border: 2px dotted foundation.$color-disable;
+    color: foundation.$color-disable;
+    background-color: #fff;
+  }
+}
