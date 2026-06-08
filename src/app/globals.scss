@@ -15,31 +15,8 @@ body {
   background-color: #ffffff;
   color: $color-text;
   font-family: var(--font-zen-maru), sans-serif;
-  //   @extend .noto;
 
   @include sm {
     font-size: 1.4rem;
   }
 }
-
-// .sp {
-//   display: none;
-//   @include sp {
-//     display: block;
-//   }
-// }
-
-// .pc {
-//   display: block;
-//   @include sp {
-//     display: none;
-//   }
-// }
-
-// .section {
-//   width: 100%;
-//   //   max-width: $page-width;
-//   padding-left: 1.6rem;
-//   padding-right: 1.6rem;
-//   margin: 0 auto;
-// }

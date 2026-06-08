@@ -29,7 +29,6 @@ const About = () => {
             duration: 0.6,
           }}
         >
-          {/* <div className={styles.about}> */}
           <div className={styles.about__img}>
             <Image
               src="/images/about/about-img.png"
@@ -51,7 +50,6 @@ const About = () => {
               利用するユーザーにとって心地よく、長く使えるUIを作ることを大切にしています。
             </dd>
           </dl>
-          {/* </div> */}
         </motion.div>
         <motion.div
           className={styles["about-conscious-wrap"]}

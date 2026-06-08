@@ -12,7 +12,7 @@
   }
 
   &__inner {
-    width: foundation.$section-width-lg;
+    width: min(foundation.$section-width-lg, calc(100% - 48px));
     margin: foundation.$title-space-pc auto;
 
     @include foundation.sm {

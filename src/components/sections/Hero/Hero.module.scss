@@ -19,7 +19,7 @@
   &__inner {
     display: flex;
     justify-content: space-between;
-    width: 1020px;
+    width: min(foundation.$section-width-lg, calc(100% - 48px));
     padding-top: 64px;
     margin: 0 auto 44px;
 

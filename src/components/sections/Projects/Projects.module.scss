@@ -1,7 +1,7 @@
 @use "../../../styles/foundation" as foundation;
 
 .projects-inner {
-  width: foundation.$section-width-lg;
+  width: min(foundation.$section-width-lg, calc(100% - 48px));
   margin: 48px auto 0;
 
   @include foundation.sm {
@@ -11,7 +11,7 @@
 }
 
 .embla-wrap {
-  width: 956px;
+  width: min(956px, 100%);
   margin: 0 auto;
   border-radius: 6px;
   background-color: #fff;
@@ -27,7 +27,7 @@
 .embla {
   position: relative;
   overflow: hidden;
-  width: 738px;
+  width: calc(100% - 110px * 2);
   margin: 0 auto;
 
   @include foundation.sm {

@@ -47,6 +47,6 @@ export const projectData: ProjectListProps[] = [
     id: 8,
     src: "nhk-character",
     link: "https://nhk-charactershop-tokyo.com/",
-    text: "下層ページのリニューアル",
+    text: "カート清算画面周りの移行作業",
   },
 ];
